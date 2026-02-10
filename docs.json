@@ -84,8 +84,8 @@
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/IconAlpexAtt.png",
+    "dark": "/logo/IconAlpexAtt.png"
   },
   "navbar": {
     "links": [
