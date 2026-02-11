@@ -85,7 +85,8 @@
   },
   "logo": {
     "light": "/logo/LogoTopMenu.png",
-    "dark": "/logo/dark.svg"
+    "dark": "/logo/dark.svg",
+    "height": 40
   },
   "navbar": {
     "links": [
