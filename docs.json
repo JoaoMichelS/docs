@@ -1,15 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "maple",
   "name": "Alpex Digital Hub",
   "colors": {
     "primary": "#1976D2",
     "light": "#42A5F5",
-    "dark": "#0D47A1",
-    "anchors": {
-      "from": "#1976D2",
-      "to": "#42A5F5"
-    }
+    "dark": "#0D47A1"
   },
   "favicon": "/favicon.svg",
   "logo": {
