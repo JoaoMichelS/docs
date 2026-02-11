@@ -84,7 +84,7 @@
     }
   },
   "logo": {
-    "light": "/logo/LogoTopMenu.png",
+    "light": "/logo/menorres.png",
     "dark": "/logo/dark.svg"
   },
   "navbar": {
