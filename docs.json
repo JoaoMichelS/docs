@@ -3,120 +3,105 @@
   "theme": "mint",
   "name": "Alpex Digital Hub",
   "colors": {
-    "primary": "#0069a8",
-    "light": "#07C983",
-    "dark": "#15803D"
-  },
-  "favicon": "/favicon.svg",
-  "navigation": {
-    "tabs": [
-      {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
-        ]
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
+    "primary": "#1976D2",
+    "light": "#42A5F5",
+    "dark": "#0D47A1",
+    "anchors": {
+      "from": "#1976D2",
+      "to": "#42A5F5"
     }
   },
+  "favicon": "/favicon.svg",
   "logo": {
     "light": "/logo/LogoTopMenu.png",
     "dark": "/logo/dark.svg"
   },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentação",
+        "groups": [
+          {
+            "group": "Início",
+            "pages": [
+              "index"
+            ]
+          },
+          {
+            "group": "Primeiros Passos",
+            "pages": [
+              "primeiros-passos/login",
+              "primeiros-passos/navegacao",
+              "primeiros-passos/perfil",
+              "primeiros-passos/notificacoes"
+            ]
+          },
+          {
+            "group": "Gestão de Frete",
+            "pages": [
+              "gestao-frete/visao-geral",
+              {
+                "group": "Cotação",
+                "pages": [
+                  "gestao-frete/cotacao/visao-geral-cotacao",
+                  "gestao-frete/cotacao/pre-cotacao",
+                  "gestao-frete/cotacao/cotacao-avulsa",
+                  "gestao-frete/cotacao/cotacao-por-carregamento",
+                  "gestao-frete/cotacao/cotacao-padrao"
+                ]
+              },
+              "gestao-frete/aprovacao-cotacao",
+              {
+                "group": "Coleta",
+                "pages": [
+                  "gestao-frete/coleta/criar-coleta",
+                  "gestao-frete/coleta/listar-coletas",
+                  "gestao-frete/coleta/confirmar-coleta"
+                ]
+              },
+              {
+                "group": "Pós-Processo",
+                "pages": [
+                  "gestao-frete/pos-processo/upload-cte",
+                  "gestao-frete/pos-processo/conferencia-cte",
+                  "gestao-frete/pos-processo/upload-canhoto"
+                ]
+              },
+              "gestao-frete/dashboard-frete"
+            ]
+          },
+          {
+            "group": "Funcionalidades Gerais",
+            "pages": [
+              "funcionalidades-gerais/personalizacao-colunas",
+              "funcionalidades-gerais/exportacao-dados",
+              "funcionalidades-gerais/filtros-busca"
+            ]
+          }
+        ]
+      }
+    ]
+  },
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Website",
+        "href": "https://alpexattivo.com.br"
       }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
+    ]
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view"
+    ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "website": "https://alpexattivo.com.br"
     }
+  },
+  "feedback": {
+    "thumbsRating": true
   }
 }

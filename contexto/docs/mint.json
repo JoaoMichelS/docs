@@ -1,0 +1,83 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Alpex Digital Hub",
+  "logo": {
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#1976D2",
+    "light": "#42A5F5",
+    "dark": "#0D47A1",
+    "anchors": {
+      "from": "#1976D2",
+      "to": "#42A5F5"
+    }
+  },
+  "navigation": [
+    {
+      "group": "Início",
+      "pages": [
+        "introducao"
+      ]
+    },
+    {
+      "group": "Primeiros Passos",
+      "pages": [
+        "primeiros-passos/login",
+        "primeiros-passos/navegacao",
+        "primeiros-passos/perfil",
+        "primeiros-passos/notificacoes"
+      ]
+    },
+    {
+      "group": "Gestão de Frete",
+      "pages": [
+        "gestao-frete/visao-geral",
+        {
+          "group": "Cotação",
+          "pages": [
+            "gestao-frete/cotacao/visao-geral-cotacao",
+            "gestao-frete/cotacao/pre-cotacao",
+            "gestao-frete/cotacao/cotacao-avulsa",
+            "gestao-frete/cotacao/cotacao-por-carregamento",
+            "gestao-frete/cotacao/cotacao-padrao"
+          ]
+        },
+        "gestao-frete/aprovacao-cotacao",
+        {
+          "group": "Coleta",
+          "pages": [
+            "gestao-frete/coleta/criar-coleta",
+            "gestao-frete/coleta/listar-coletas",
+            "gestao-frete/coleta/confirmar-coleta"
+          ]
+        },
+        {
+          "group": "Pós-Processo",
+          "pages": [
+            "gestao-frete/pos-processo/upload-cte",
+            "gestao-frete/pos-processo/conferencia-cte",
+            "gestao-frete/pos-processo/upload-canhoto"
+          ]
+        },
+        "gestao-frete/dashboard-frete"
+      ]
+    },
+    {
+      "group": "Funcionalidades Gerais",
+      "pages": [
+        "funcionalidades-gerais/personalizacao-colunas",
+        "funcionalidades-gerais/exportacao-dados",
+        "funcionalidades-gerais/filtros-busca"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "website": "https://alpexattivo.com.br"
+  },
+  "feedback": {
+    "thumbsRating": true
+  }
+}
