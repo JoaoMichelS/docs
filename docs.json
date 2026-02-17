@@ -80,7 +80,7 @@
     "links": [
       {
         "label": "Website",
-        "href": "https://alpexattivo.com.br"
+        "href": "https://192.168.4.8/"
       }
     ]
   },
@@ -92,7 +92,7 @@
   },
   "footer": {
     "socials": {
-      "website": "https://alpexattivo.com.br"
+      "website": "https://192.168.4.8/"
     }
   },
   "feedback": {

@@ -1,6 +1,6 @@
 ---
 title: "Alpex Digital Hub"
-description: "Visão geral da plataforma Alpex Digital Hub para gestão logística e de fretes"
+description: "Visão geral da plataforma Alpex Digital Hub"
 icon: "house"
 ---
 
