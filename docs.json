@@ -27,7 +27,6 @@
             "group": "Primeiros Passos",
             "pages": [
               "primeiros-passos/login",
-              "primeiros-passos/navegacao",
               "primeiros-passos/perfil",
               "primeiros-passos/notificacoes"
             ]
