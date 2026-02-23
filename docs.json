@@ -33,10 +33,10 @@
           {
             "group": "Gestão de Frete",
             "pages": [
-              "gestao-frete/visao-geral",
               {
                 "group": "Cotação",
                 "pages": [
+                  "gestao-frete/visao-geral",
                   "gestao-frete/cotacao/visao-geral-cotacao",
                   "gestao-frete/cotacao/pre-cotacao",
                   "gestao-frete/cotacao/cotacao-avulsa",
