@@ -1,7 +1,6 @@
 ---
 title: "Dashboard de Frete"
 description: "Como utilizar o dashboard de indicadores e relatórios de frete"
-icon: "chart-mixed"
 ---
 
 # Dashboard de Frete

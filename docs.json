@@ -46,19 +46,19 @@
                 ]
               },
               {
-                "group": "Coleta",
-                "pages": [
-                  "gestao-frete/coleta/criar-coleta",
-                  "gestao-frete/coleta/listar-coletas",
-                  "gestao-frete/coleta/confirmar-coleta"
-                ]
-              },
-              {
-                "group": "Pós-Processo",
+                "group": "Auditoria de Cotação",
                 "pages": [
                   "gestao-frete/pos-processo/upload-cte",
                   "gestao-frete/pos-processo/conferencia-cte",
                   "gestao-frete/pos-processo/upload-canhoto"
+                ]
+              },
+              {
+                "group": "Coletas",
+                "pages": [
+                  "gestao-frete/coleta/criar-coleta",
+                  "gestao-frete/coleta/listar-coletas",
+                  "gestao-frete/coleta/confirmar-coleta"
                 ]
               },
               "gestao-frete/dashboard-frete"
