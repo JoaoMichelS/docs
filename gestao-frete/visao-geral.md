@@ -1,12 +1,11 @@
 ---
 title: "Visão Geral - Gestão de Frete"
 description: "Fluxo completo do módulo de gestão de frete do Alpex Digital Hub"
-icon: "truck"
 ---
 
 # Visão Geral — Gestão de Frete
 
-O módulo de **Gestão de Frete** é o coração do Alpex Digital Hub. Ele cobre todo o ciclo de vida de um frete, desde a cotação até a conferência dos documentos fiscais.
+O módulo de **Gestão de Frete** cobre todo o ciclo de vida de um frete, desde a cotação até a conferência dos documentos fiscais.
 
 ## Fluxo Completo
 
@@ -38,12 +37,12 @@ A pré-cotação permite preparar e organizar os dados antes de iniciar a cotaç
 
 A cotação é o processo de obter e registrar os valores de frete junto às transportadoras. Existem 4 tipos:
 
-| Tipo | Descrição |
-|------|-----------|
-| **Cotação Avulsa** | Cotação individual por pedido/cliente |
-| **Cotação por Carregamento** | Agrupa pedidos por número de carregamento |
+| Tipo | Descrição                                                   |
+|------|-------------------------------------------------------------|
+| **Cotação Avulsa** | Cotação individual por pedido/cliente                       |
+| **Cotação por Carregamento** | Agrupa pedidos por número de carregamento                   |
 | **Cotação Padrão** | Tabela fixa de valores por tipo de veículo e transportadora |
-| **Inserir Cotação** | Cotação direta vinculada a pedidos do ERP |
+| **Inserir Cotação** | Cotação direta vinculada a pedidos do Winthor               |
 
 ### 3. Aprovação
 
