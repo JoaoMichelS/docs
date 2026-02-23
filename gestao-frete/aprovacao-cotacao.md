@@ -1,7 +1,7 @@
 ---
 title: "Aprovação de Cotação"
 description: "Como aprovar e reprovar cotações de frete no Alpex Digital Hub"
-icon: "check-double"
+icon: "check"
 ---
 
 # Aprovação de Cotação

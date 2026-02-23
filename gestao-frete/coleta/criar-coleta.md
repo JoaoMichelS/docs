@@ -1,7 +1,7 @@
 ---
 title: "Criar Coleta"
 description: "Como criar uma coleta de frete no Alpex Digital Hub"
-icon: "truck-loading"
+icon: "box"
 ---
 
 # Criar Coleta
@@ -73,6 +73,4 @@ Ao salvar a coleta, o sistema executa automaticamente:
 | Refrigerado | Não | Se o veículo é refrigerado |
 | Observações | Não | Informações adicionais |
 
-<Note>
-  O PDF da coleta pode ser impresso e entregue na portaria para controle de acesso do veículo.
-</Note>
+

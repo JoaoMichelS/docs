@@ -41,10 +41,10 @@
                   "gestao-frete/cotacao/pre-cotacao",
                   "gestao-frete/cotacao/cotacao-avulsa",
                   "gestao-frete/cotacao/cotacao-por-carregamento",
-                  "gestao-frete/cotacao/cotacao-padrao"
+                  "gestao-frete/cotacao/cotacao-padrao",
+                  "gestao-frete/aprovacao-cotacao"
                 ]
               },
-              "gestao-frete/aprovacao-cotacao",
               {
                 "group": "Coleta",
                 "pages": [
