@@ -11,7 +11,7 @@
   "favicon": "/IconNewAlpex.svg",
   "logo": {
     "light": "/logo/LogoTopMenu.png",
-    "dark": "/logo/dark.svg"
+    "dark": "/logo/LogoTopMenuDark.png"
   },
   "navigation": {
     "tabs": [
