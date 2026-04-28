@@ -60,6 +60,43 @@
             ]
           },
           {
+            "group": "200 - Gestão de Contratos",
+            "pages": [
+              "gestao-contratos/visao-geral",
+              {
+                "group": "Solicitações de Contrato",
+                "pages": [
+                  "gestao-contratos/solicitacoes/visao-geral",
+                  "gestao-contratos/solicitacoes/criacao-manual",
+                  "gestao-contratos/solicitacoes/intake-email-ia",
+                  "gestao-contratos/solicitacoes/revisao-interna",
+                  "gestao-contratos/solicitacoes/aprovacao-diretor",
+                  "gestao-contratos/solicitacoes/assinatura-digital"
+                ]
+              },
+              {
+                "group": "Contratos em Vigência",
+                "pages": [
+                  "gestao-contratos/contratos/visao-geral",
+                  "gestao-contratos/contratos/listagem",
+                  "gestao-contratos/contratos/gestao-detalhe",
+                  "gestao-contratos/contratos/aditivos",
+                  "gestao-contratos/contratos/contatos-parceiro",
+                  "gestao-contratos/contratos/documentos"
+                ]
+              },
+              {
+                "group": "Cadastros Auxiliares",
+                "pages": [
+                  "gestao-contratos/cadastros/diretores",
+                  "gestao-contratos/cadastros/tags",
+                  "gestao-contratos/cadastros/setores"
+                ]
+              },
+              "gestao-contratos/dashboard"
+            ]
+          },
+          {
             "group": "Funcionalidades Gerais",
             "pages": [
               "funcionalidades-gerais/personalizacao-colunas",
