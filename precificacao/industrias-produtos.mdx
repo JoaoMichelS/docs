@@ -1,0 +1,161 @@
+---
+title: "Indústrias e Produtos"
+---
+
+**Menu:** 1105 - Indústrias e Produtos
+
+Cadastro das indústrias (fornecedores), das marcas e dos produtos que elas vendem, com preço de compra e NCM. Usado pela equipe de precificação para calcular o preço de produtos que ainda não estão no Winthor.
+
+![Visão geral de Indústrias, Produtos e Marcas](/precificacao/img/cadastros/04-industrias-visao-geral.png)
+
+**Como esse cadastro é usado nos cálculos**
+
+- **Calculadora:** na opção de usar o preço da indústria, você escolhe a indústria e os produtos dela. O **Preço de Compra** do cadastro vira o custo de partida, e o **NCM** do produto indica quais impostos buscar no Cadastro NCM. Um produto cujo NCM não tem impostos cadastrados é salvo com aviso, mas não consegue ser calculado.
+- **Comparativo em massa:** não consulta este cadastro, pois trabalha com os produtos do Winthor.
+
+A tela tem três abas: **Indústrias**, **Produtos** e **Marcas**. O botão de ação no canto superior direito muda conforme a aba (**Nova Indústria**, **Novo Produto** ou **Nova Marca**). Em todas as listas valem a busca, o filtro **Status**, a ordenação pelos títulos das colunas, o menu **Colunas** e a paginação.
+
+![Aba Produtos](/precificacao/img/cadastros/50-industrias-aba-produtos.png)
+
+![Aba Marcas](/precificacao/img/cadastros/51-industrias-aba-marcas.png)
+
+## Cadastrar ou editar uma indústria
+
+<Steps>
+  <Step title="Abrir o formulário">
+    Na aba **Indústrias**, clique em **Nova Indústria**. Para editar, use o lápis (**Editar**) da linha.
+
+    ![Formulário Nova Indústria](/precificacao/img/cadastros/52-industrias-nova-vazio.png)
+  </Step>
+  <Step title="Partir de uma indústria pré-cadastrada (opcional)">
+    No campo **Selecionar indústria pré-cadastrada**, busque e escolha um nome já existente para preencher o formulário com os dados dele.
+
+    ![Lista de indústrias pré-cadastradas](/precificacao/img/cadastros/54-industrias-pre-cadastrada.png)
+  </Step>
+  <Step title="Preencher">
+    Informe o **Nome da Indústria** (mínimo de 2 letras) e a **Moeda Padrão**. Deixe **Indústria ativa** marcado para ela aparecer nas escolhas.
+
+    ![Formulário preenchido](/precificacao/img/cadastros/53-industrias-nova-preenchida.png)
+  </Step>
+  <Step title="Salvar">
+    Clique em **Criar** (ou **Atualizar**, na edição). A **Chave** é gerada pelo sistema e aparece, sem edição, ao editar.
+
+    ![Edição de indústria](/precificacao/img/cadastros/55-industrias-editar.png)
+  </Step>
+</Steps>
+
+<Note>
+Não podem existir duas indústrias com o mesmo nome (o sistema ignora acentos e maiúsculas e avisa qual já existe). Ao renomear uma indústria, o novo nome é copiado para as marcas e os produtos dela.
+</Note>
+
+## Excluir uma indústria
+
+<Steps>
+  <Step title="Pedir a exclusão">
+    Na linha da indústria, clique no ícone de lixeira (**Excluir**).
+  </Step>
+  <Step title="Confirmar ou cancelar">
+    Aparece "Excluir indústria ...? Os produtos vinculados não serão removidos." Clique em **Sim, excluir!** para confirmar ou em **Cancelar** para desistir.
+
+    ![Confirmação de exclusão de indústria](/precificacao/img/cadastros/56-industrias-excluir-confirma.png)
+  </Step>
+</Steps>
+
+<Warning>
+A indústria é removida de forma definitiva. Os produtos dela continuam na lista, mas ficam sem a indústria vinculada.
+</Warning>
+
+## Cadastrar, editar, duplicar ou excluir um produto
+
+<Steps>
+  <Step title="Abrir o formulário">
+    Na aba **Produtos**, clique em **Novo Produto**. Na linha de um produto existente há três ações: **Editar**, **Duplicar** e **Excluir**.
+
+    ![Formulário Novo Produto vazio](/precificacao/img/cadastros/57-industrias-novo-produto-vazio.png)
+  </Step>
+  <Step title="Preencher">
+    Escolha a **Indústria** (só aparecem indústrias ativas) e informe a **Descrição do Produto**. Em **Marca**, escolha uma marca da indústria ou digite um nome novo: ele é cadastrado ao salvar. Informe o **Preço de Compra (R$)**, a **Embalagem** e o **NCM** (digite 2 ou mais caracteres para buscar na lista do Winthor; se a busca não retornar, pode digitar o número livremente).
+
+    ![Produto preenchido](/precificacao/img/cadastros/59-industrias-produto-preenchido.png)
+  </Step>
+  <Step title="Salvar">
+    Clique em **Criar** (ou **Atualizar**). Se o NCM informado não tiver impostos no Cadastro NCM, o produto é salvo com um aviso para cadastrar os dados fiscais.
+  </Step>
+  <Step title="Duplicar">
+    O ícone **Duplicar** abre o formulário já preenchido com os dados do produto e a descrição terminando em "(cópia)". Ajuste o que for diferente e clique em **Criar**.
+
+    ![Botão Duplicar destacado](/precificacao/img/cadastros/60-industrias-produto-duplicar-botao.png)
+
+    ![Formulário de cópia](/precificacao/img/cadastros/61-industrias-produto-duplicado.png)
+  </Step>
+  <Step title="Excluir">
+    O ícone **Excluir** pede confirmação ("Excluir produto ...?"). **Sim, excluir!** remove o produto.
+
+    ![Confirmação de exclusão de produto](/precificacao/img/cadastros/62-industrias-produto-excluir-confirma.png)
+  </Step>
+</Steps>
+
+<Note>
+**Descrição do Produto** (mínimo de 2 letras), **Marca**, **Indústria** e **Preço de Compra** (maior que zero) são obrigatórios. A moeda do produto segue a moeda padrão da indústria. Se não houver nenhuma indústria ativa, o formulário avisa para cadastrar uma primeiro.
+</Note>
+
+## Cadastrar, editar ou excluir uma marca
+
+<Steps>
+  <Step title="Abrir o formulário">
+    Na aba **Marcas**, clique em **Nova Marca** (ou no lápis da linha, para editar).
+  </Step>
+  <Step title="Preencher e salvar">
+    Escolha a **Indústria**, digite o **Nome da Marca** e deixe **Marca ativa** marcado. Clique em **Criar** (ou **Atualizar**).
+
+    ![Marca preenchida](/precificacao/img/cadastros/63-industrias-marca-nova-preenchida.png)
+  </Step>
+  <Step title="Excluir">
+    O ícone de lixeira pede confirmação. Se houver produtos usando a marca, o aviso informa quantos ficarão sem marca.
+
+    ![Confirmação de exclusão de marca](/precificacao/img/cadastros/64-industrias-marca-excluir-confirma.png)
+  </Step>
+</Steps>
+
+<Note>
+Uma indústria não pode ter duas marcas com o mesmo nome. Mover uma marca para outra indústria move também os produtos dela.
+</Note>
+
+## Importar indústrias e produtos por planilha
+
+<Steps>
+  <Step title="Abrir a importação">
+    Na aba **Indústrias**, clique em **Importar planilha**. A janela lista as colunas esperadas (**industria** e **marca** são obrigatórias; as demais são **moeda_padrao**, **descricao**, **ncm**, **valor**, **peso**, **qtd**, **embalagem**, **moeda** e **ativo**). Use **Baixar modelo** para obter o arquivo de exemplo.
+
+    ![Janela Importar planilha](/precificacao/img/cadastros/65-industrias-importar.png)
+  </Step>
+  <Step title="Enviar o arquivo">
+    Escolha o arquivo (.xlsx, .xls ou .csv) e clique em **Carregar e revisar**.
+  </Step>
+  <Step title="Revisar">
+    A janela **Revisar importação** mostra as indústrias e os produtos lidos. Corrija os campos direto na tabela, remova linhas com o **×** e veja os problemas na coluna de erros (linhas com erro aparecem em vermelho). **Voltar** retorna ao envio.
+
+    ![Revisão da importação](/precificacao/img/cadastros/66-industrias-importar-revisar.png)
+  </Step>
+  <Step title="Confirmar">
+    **Confirmar importação** grava as indústrias e os produtos. Indústrias repetidas na planilha são unificadas pelo nome. Linhas sem **descricao** cadastram só a indústria.
+  </Step>
+</Steps>
+
+## Pré-cadastrar indústrias por planilha
+
+<Steps>
+  <Step title="Abrir o pré-cadastro">
+    Na aba **Indústrias**, clique em **Pré Cadastro**. A tela pede um arquivo com as colunas **Nome**, **Moeda** e **Ativo** (S/N). **Baixar modelo** entrega um exemplo e **Voltar à lista** retorna.
+
+    ![Tela de pré-cadastro](/precificacao/img/cadastros/67-industrias-pre-cadastro.png)
+  </Step>
+  <Step title="Carregar a planilha">
+    Escolha o arquivo e clique em **Carregar planilha**. Cada linha aparece com o status **Novo** ou **Existente**; ajuste nome, moeda e ativo, ou remova linhas com o **×**.
+
+    ![Prévia do pré-cadastro](/precificacao/img/cadastros/68-industrias-pre-cadastro-previa.png)
+  </Step>
+  <Step title="Confirmar">
+    Clique em **Confirmar importação**. O aviso final informa quantas foram criadas e quantas já existiam. **Cancelar** descarta tudo.
+  </Step>
+</Steps>

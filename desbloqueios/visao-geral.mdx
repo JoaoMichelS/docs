@@ -1,0 +1,61 @@
+---
+title: "Visão Geral - Desbloqueios"
+description: "Visão geral do módulo de Desbloqueios, das telas e de como o acesso é liberado"
+icon: "lock-open"
+---
+
+# Desbloqueios
+
+O módulo **1400 - Desbloqueios** mantém a lista de **clientes imunes**: clientes que não podem ficar bloqueados no WinThor. Uma rotina automática roda todo dia e remove o bloqueio geral de quem está na lista. O módulo também mostra quem está bloqueado hoje, o resultado de cada rodada da rotina e o histórico de quem alterou a lista.
+
+Cada página deste manual traz o passo a passo, com prints, de todas as ações de uma tela.
+
+<CardGroup cols={2}>
+  <Card title="Clientes Imunes" icon="shield-halved" href="/desbloqueios/clientes-imunes">
+    Incluir e remover clientes da lista, um a um, em lote ou por planilha.
+  </Card>
+  <Card title="Bloqueados" icon="lock" href="/desbloqueios/bloqueados">
+    Ver quem está com o bloqueio geral ligado no WinThor e tornar imune a partir dali.
+  </Card>
+  <Card title="Execuções" icon="list-check" href="/desbloqueios/execucoes">
+    Conferir cada rodada da rotina: quem foi desbloqueado, quem falhou e por quê.
+  </Card>
+  <Card title="Histórico e Configuração" icon="gear" href="/desbloqueios/historico">
+    Auditoria das alterações, horário da rotina e execução manual.
+  </Card>
+</CardGroup>
+
+## Como funciona
+
+<Steps>
+  <Step title="O WinThor bloqueia o cliente">
+    O bloqueio geral é ligado pelo WinThor, por exemplo quando o cliente fica inadimplente, e impede novos pedidos.
+  </Step>
+  <Step title="O cliente entra na lista de imunes">
+    Em **1401 - Clientes Imunes** (ou pelo botão **Tornar imune** em **1403 - Bloqueados**) o cliente é incluído na lista. Incluir na lista não desbloqueia na hora.
+  </Step>
+  <Step title="A rotina desbloqueia">
+    No horário definido em **1410 - Configuração**, a rotina remove o bloqueio geral de todos os clientes da lista que estiverem bloqueados. Ela também pode ser executada manualmente.
+  </Step>
+  <Step title="O resultado fica registrado">
+    Cada rodada aparece em **1404 - Execuções**, com o resultado por cliente. As alterações na lista e na configuração ficam em **1411 - Histórico**.
+  </Step>
+</Steps>
+
+<Warning>
+A rotina mexe somente no bloqueio geral. Bloqueio definitivo, por inatividade, fiscal da SEFAZ, fiscal de pedido, por data de cheque, de remessa de cobrança e de venda para pessoa física nunca são alterados pelo sistema, mesmo para cliente imune.
+</Warning>
+
+## Telas e permissões
+
+| Tela | Para que serve | Permissão |
+|---|---|---|
+| 1401 - Clientes Imunes | Manter a lista de clientes imunes | 501109 |
+| 1403 - Bloqueados | Consultar os clientes bloqueados no WinThor | 501109 |
+| 1404 - Execuções | Consultar as rodadas da rotina | 501109 |
+| 1411 - Histórico | Auditoria das alterações | 501111 |
+| 1410 - Configuração | Ativar a rotina, definir o horário e executar manualmente | Administrador ou 501110 |
+
+<Tip>
+Após mudar a permissão de alguém, a pessoa precisa sair e entrar de novo no sistema para o acesso valer.
+</Tip>

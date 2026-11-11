@@ -1,0 +1,127 @@
+---
+title: "Multas"
+---
+
+**Menu:** 1908 - Multas
+
+Aqui o Gestor lança as multas recebidas, vincula cada uma ao condutor, indica o condutor ao órgão de trânsito dentro do prazo e marca a multa como paga.
+
+![Visão geral da tela de Multas](/gestao-frota/img/gestao/50-multas-visao.png)
+
+## Filtrar as multas
+
+<Steps>
+  <Step title="Usar os quadros do topo">
+    Clique em **Pendentes de indicação** para ver só as multas que ainda não têm condutor indicado ao órgão, ou em **Prazo em até 7 dias ou atrasado** para ver as urgentes. Clique em **Valor total** ou **Pontos** para mostrar todas de novo.
+
+    ![Quadro Pendentes de indicação](/gestao-frota/img/gestao/51-multas-kpi-pendentes.png)
+
+    ![Lista filtrada por pendentes](/gestao-frota/img/gestao/52-multas-filtrado-pendentes.png)
+  </Step>
+  <Step title="Filtrar por status">
+    No campo **Status**, escolha Pendente de indicação, Condutor indicado ou Paga. Para limpar, escolha **Todos os status**.
+
+    ![Filtro de status](/gestao-frota/img/gestao/53-multas-filtro-status.png)
+  </Step>
+</Steps>
+
+## Cadastrar uma multa
+
+<Steps>
+  <Step title="Abrir o formulário">
+    Clique em **Nova multa**.
+
+    ![Botão Nova multa](/gestao-frota/img/gestao/54-multas-nova-botao.png)
+  </Step>
+  <Step title="Anexar a foto da notificação">
+    Em **Foto da notificação**, clique em **Tirar foto** (usa a câmera do aparelho) ou em **Anexar foto** (imagem ou PDF). Dá para anexar mais de uma.
+  </Step>
+  <Step title="Preencher os dados">
+    Escolha o **Veículo** e informe **Data da infração**, **Hora**, **Infração**, **Valor (R$)**, **Pontos**, **Data da notificação**, **Local** e **Auto de infração**. O campo **Infração** sugere descrições já usadas. Em **Condutor**, o sistema mostra o condutor sugerido; deixe **Usar a sugestão** ou escolha outro (ou **Não identificado**) em **Condutor vinculado à multa**.
+
+    ![Formulário de nova multa](/gestao-frota/img/gestao/55-multas-nova-formulario.png)
+  </Step>
+  <Step title="Salvar">
+    Clique em **Salvar multa**.
+  </Step>
+</Steps>
+
+<Note>
+Veículo, data da infração, infração e valor são obrigatórios, e a data da infração não pode ser futura. O condutor sugerido vem da escala do dia; sem escala, do checklist do dia; por último, do condutor habitual. O prazo de indicação é a data da notificação mais 30 dias.
+</Note>
+
+## Ver as fotos e alterar o condutor vinculado
+
+<Steps>
+  <Step title="Abrir o painel">
+    Na linha da multa, clique em **Fotos e condutor**.
+
+    ![Botão Fotos e condutor](/gestao-frota/img/gestao/56-multas-fotos-botao.png)
+  </Step>
+  <Step title="Ver ou trocar as fotos">
+    Clique na foto para abri-la em tamanho grande. Use **Tirar foto** ou **Anexar foto** para incluir novas e clique em **Salvar fotos** para gravar.
+
+    ![Multa cadastrada na lista](/gestao-frota/img/gestao/160-multas-cadastrada.png)
+  </Step>
+  <Step title="Remover uma foto">
+    Abaixo da foto, clique em **Remover**. Confirme na janela que abre. A foto some da multa.
+
+    ![Botão Remover da foto](/gestao-frota/img/gestao/161-multas-remover-foto-botao.png)
+
+    ![Confirmação da remoção](/gestao-frota/img/gestao/162-multas-remover-foto-confirmacao.png)
+
+    ![Multa sem a foto](/gestao-frota/img/gestao/163-multas-foto-removida.png)
+  </Step>
+  <Step title="Trocar o condutor vinculado">
+    O painel mostra a sugestão automática e o vínculo atual. Em **Vincular a**, escolha o condutor e clique em **Salvar vínculo**.
+
+    ![Painel Fotos e condutor](/gestao-frota/img/gestao/57-multas-fotos-condutor-painel.png)
+  </Step>
+</Steps>
+
+<Note>
+Remover uma foto pede confirmação. O vínculo é diferente da indicação ao órgão: o vínculo diz quem dirigia, a indicação é o ato formal junto ao órgão de trânsito.
+</Note>
+
+## Indicar o condutor ao órgão de trânsito
+
+<Steps>
+  <Step title="Abrir a indicação">
+    Na linha da multa, clique em **Indicar condutor** (ou em **Alterar indicação**, se já houver uma).
+
+    ![Botão Indicar condutor](/gestao-frota/img/gestao/58-multas-indicar-botao.png)
+  </Step>
+  <Step title="Escolher o condutor">
+    Confira a sugestão e o prazo, escolha o **Condutor indicado ao órgão** e clique em **Indicar condutor**.
+
+    ![Painel de indicação](/gestao-frota/img/gestao/59-multas-indicar-painel.png)
+  </Step>
+</Steps>
+
+<Note>
+A indicação fica registrada na auditoria e passa a contar no ranking do condutor indicado. A multa muda para o status Condutor indicado.
+</Note>
+
+## Marcar a multa como paga
+
+<Steps>
+  <Step title="Pedir a baixa">
+    Na linha da multa, clique em **Marcar como paga**.
+
+    ![Botão Marcar como paga](/gestao-frota/img/gestao/60-multas-pagar-botao.png)
+  </Step>
+  <Step title="Confirmar">
+    Na janela de confirmação, clique em **Marcar como paga**. Para desistir, clique em **Cancelar**.
+
+    ![Confirmação de pagamento](/gestao-frota/img/gestao/61-multas-pagar-confirmacao.png)
+  </Step>
+  <Step title="Conferir o resultado">
+    A linha passa para o status **Paga**, com a data do pagamento, e os botões de indicação somem.
+
+    ![Multa marcada como paga](/gestao-frota/img/gestao/164-multas-paga-resultado.png)
+  </Step>
+</Steps>
+
+<Note>
+O valor entra no custo do veículo pela data da infração. Multa paga fica com a data do pagamento na linha e não aceita mais indicação.
+</Note>

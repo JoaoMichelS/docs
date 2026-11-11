@@ -1,0 +1,96 @@
+---
+title: "Visão Geral - Gestão de Frota"
+description: "Visão geral do módulo, perfis de acesso e o que cada perfil pode fazer"
+icon: "truck"
+---
+
+# Gestão de Frota
+
+O módulo **1900 - Gestão de Frota** controla a operação diária dos veículos próprios: escala dos motoristas, checklists de saída e retorno, abastecimentos, jornada, ocorrências, ordens de serviço, manutenção preventiva, estoque de peças, documentos, multas, custos e relatórios.
+
+Este manual está dividido por perfil. Cada página traz o passo a passo, com prints, de todas as ações que aquele perfil pode executar.
+
+<CardGroup cols={2}>
+  <Card title="Motorista" icon="id-card" href="/gestao-frota/motorista/meu-dia">
+    Meu dia, checklist pelo QR code, abastecimento, jornada e minha área. Feito para o celular.
+  </Card>
+  <Card title="Líder" icon="user-group" href="/gestao-frota/lider/escala-diaria">
+    Escala diária, presença, ranking e acompanhamento dos veículos, checklists e ocorrências.
+  </Card>
+  <Card title="Manutenção" icon="wrench" href="/gestao-frota/manutencao/ocorrencias">
+    Tratamento das ocorrências, ordens de serviço, preventiva, estoque de peças e paradas de veículo.
+  </Card>
+  <Card title="Gestor" icon="user-tie" href="/gestao-frota/gestor/escala-diaria">
+    Tudo o que o líder e a manutenção fazem, mais cadastros, configurações, documentos, multas, custos e relatórios.
+  </Card>
+</CardGroup>
+
+## Como o acesso é liberado
+
+O acesso ao módulo é dado pela rotina **501119** no cadastro de permissões. Cada perfil é um controle dessa rotina:
+
+| Perfil | Controle | Permissão |
+|---|---|---|
+| Motorista | 1 | 501119-1 |
+| Líder | 2 | 501119-2 |
+| Manutenção | 3 | 501119-3 |
+| Gestor | 4 | 501119-4 |
+
+<Note>
+Um usuário pode ter mais de um perfil; nesse caso ele soma os acessos. O menu mostra apenas as telas liberadas para os perfis do usuário. Quem não tem nenhum controle da rotina recebe a mensagem *"Você não tem perfil na Gestão de Frota"*.
+</Note>
+
+<Warning>
+O perfil **Motorista** precisa, além da permissão, que a matrícula do usuário esteja vinculada a um colaborador ativo em **1902 - Cadastros > Colaboradores**. Sem esse vínculo as telas do motorista mostram *"Seu usuário não está vinculado a um colaborador da frota"*.
+</Warning>
+
+<Tip>
+Após mudar a permissão de alguém, a pessoa precisa sair e entrar de novo no sistema para o novo perfil valer.
+</Tip>
+
+## Telas por perfil
+
+| Tela | Motorista | Líder | Manutenção | Gestor |
+|---|:-:|:-:|:-:|:-:|
+| 1901 - Escala diária | | ✓ | | ✓ |
+| 1902 - Cadastros | | | | ✓ |
+| 1903 - Configurações | | | | ✓ |
+| 1904 - Meu dia (motorista) | ✓ | | | |
+| 1905 - Notificações | ✓ | ✓ | ✓ | ✓ |
+| 1906 - Presença | | ✓ | | ✓ |
+| 1907 - Ranking de motoristas | | ✓ | | ✓ |
+| 1908 - Multas | | | | ✓ |
+| 1909 - Minha área (motorista) | ✓ | | | |
+| 1910 - Documentos e vencimentos | | | | ✓ |
+| 1911 - Checklists recebidos | | ✓ | ✓ | ✓ |
+| 1912 - Veículos (e detalhe do veículo) | | ✓ | ✓ | ✓ |
+| 1913 - Painel da frota | | ✓ | ✓ | ✓ |
+| 1914 - Relatórios | | | | ✓ |
+| 1915 - Ocorrências | | ✓ | ✓ | ✓ |
+| 1916 - Ordens de serviço | | | ✓ | ✓ |
+| 1917 - Estoque de peças | | | ✓ | ✓ |
+| 1918 - Preventiva | | | ✓ | ✓ |
+| 1919 - Custos da frota | | | | ✓ |
+| Perfil do colaborador | | ✓ | | ✓ |
+
+## Ações por perfil
+
+Algumas telas são vistas por vários perfis, mas certas ações dentro delas são restritas:
+
+| Ação | Motorista | Líder | Manutenção | Gestor |
+|---|:-:|:-:|:-:|:-:|
+| Operar as telas do motorista | ✓ | | | |
+| Consultar a frota e as ocorrências | | ✓ | ✓ | ✓ |
+| Tratar ocorrências, OS, preventiva e estoque | | | ✓ | ✓ |
+| Marcar ou encerrar a parada do veículo | | | ✓ | ✓ |
+| Editar a escala e a presença | | ✓ | | ✓ |
+| Ver o telefone completo | | ✓ | | ✓ |
+| Ajustar os pesos do ranking | | | | ✓ |
+| Cadastrar documentos e multas | | | | ✓ |
+| Alterar os cadastros | | | | ✓ |
+| Alterar as configurações | | | | ✓ |
+| Ver o CPF completo | | | | ✓ |
+
+<Note>
+A matriz acima também pode ser consultada no próprio sistema em **1903 - Configurações > Perfis**.
+</Note>

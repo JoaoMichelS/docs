@@ -1,0 +1,63 @@
+---
+title: "Visão Geral - Produção"
+description: "Visão geral do módulo de Produção, das telas e de como o acesso é liberado"
+icon: "industry"
+---
+
+# Produção
+
+O módulo **1200 - Produção** registra o que a fábrica produz e mostra esses números em relatórios: os apontamentos por colaborador e por máquina, o cadastro de colaboradores e de produtos, as metas mensais e os gráficos de acompanhamento.
+
+Toda a produção é medida em **caixas**. Cada página deste manual traz o passo a passo, com prints, de todas as ações de uma tela.
+
+<CardGroup cols={2}>
+  <Card title="Registro de Produção" icon="clipboard-list" href="/producao/registro-producao">
+    Lançar, corrigir e exportar os apontamentos por colaborador, um a um ou pela foto do formulário em papel.
+  </Card>
+  <Card title="Registro de Máquina" icon="gears" href="/producao/registro-maquina">
+    Os mesmos apontamentos, para a produção das máquinas, com diário de bordo.
+  </Card>
+  <Card title="Cadastros" icon="users" href="/producao/colaboradores">
+    Colaboradores e produtos que aparecem nos registros, com importação por planilha.
+  </Card>
+  <Card title="Relatórios e Metas" icon="chart-column" href="/producao/relatorios-visao-geral">
+    Produção por dia, mês e ano, meta x atingido, e o detalhe por colaborador e por máquina.
+  </Card>
+</CardGroup>
+
+## Como o trabalho flui
+
+<Steps>
+  <Step title="Manter os cadastros">
+    Em **1202 - Colaboradores** e **1203 - Produtos** ficam as pessoas e os produtos que podem ser escolhidos nos registros. Um registro só aceita produto cadastrado.
+  </Step>
+  <Step title="Definir as metas">
+    Em **1205 - Metas** se informa a meta de caixas de cada mês do ano.
+  </Step>
+  <Step title="Lançar a produção">
+    Em **1201 - Registro de Produção** se lança o que cada colaborador (aba **Produção**) e cada máquina (aba **Máquina**) produziu.
+  </Step>
+  <Step title="Acompanhar">
+    Em **1204 - Relatórios** os lançamentos viram gráficos e tabelas, comparados com a meta.
+  </Step>
+</Steps>
+
+## Telas e permissões
+
+O acesso a cada tela é liberado por uma rotina no cadastro de permissões. O menu mostra só as telas liberadas para o usuário.
+
+| Tela | Para que serve | Permissão |
+|---|---|---|
+| 1201 - Registro de Produção | Apontamentos por colaborador e por máquina | 501201 |
+| 1202 - Colaboradores | Cadastro das pessoas da produção | 501202 |
+| 1203 - Produtos | Cadastro dos produtos e da quantidade por caixa | 501203 |
+| 1204 - Relatórios | Gráficos e tabelas de produção | 501204 |
+| 1205 - Metas | Meta mensal de caixas | 501205 |
+
+<Note>
+Em **1204 - Relatórios** existe ainda a permissão específica **501106-1 (Ver apenas diário)**: quem a tem enxerga só a aba **Por dia**, sem a Visão geral, o detalhe por colaborador e o detalhe por máquina.
+</Note>
+
+<Tip>
+Após mudar a permissão de alguém, a pessoa precisa sair e entrar de novo no sistema para o acesso valer.
+</Tip>

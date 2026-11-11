@@ -1,0 +1,77 @@
+---
+title: "Aplicativo de mesa: Abastecimento"
+sidebarTitle: "Abastecimento"
+---
+
+**Menu:** 1702 - Aplicativo de mesa, Abastecedor, Abastecer  
+**Perfis:** Abastecedor
+
+Abastecer é levar caixas do pallet (material já liberado pela qualidade) para uma mesa ou para a máquina. O abastecedor escolhe o produto, a mesa e a quantidade, confere o resultado e confirma.
+
+<img src="/nacionalizacao/img/aplicativo/30-abast-produtos.png" alt="Produtos com material liberado no pallet" width="320" />
+
+## Abastecer uma mesa
+
+<Steps>
+  <Step title="Escolher o produto">
+    No painel, toque em **Abastecer**. A lista mostra os produtos liberados pela qualidade, com o saldo **no pallet**. Toque no produto ou bipe o código dele.
+
+    <img src="/nacionalizacao/img/aplicativo/31-abast-produto-escolhido.png" alt="Produto escolhido, com a necessidade e as mesas" width="320" />
+  </Step>
+  <Step title="Escolher a necessidade, se houver mais de uma">
+    Quando o mesmo produto tem mais de uma necessidade com material no pallet, o aplicativo pede para escolher qual está abastecendo. Toque na necessidade (chave e lote).
+
+    <img src="/nacionalizacao/img/aplicativo/35-abast-duas-necessidades.png" alt="Escolha entre duas necessidades do mesmo produto" width="320" />
+  </Step>
+  <Step title="Escolher a mesa e a quantidade">
+    Toque na mesa de destino (ou bipe o QR dela) e digite a **Quantidade de caixas**. Abaixo do campo aparece o saldo do pallet e da mesa, com o limite de caixas por mesa.
+
+    <img src="/nacionalizacao/img/aplicativo/32-abast-quantidade.png" alt="Mesa e quantidade preenchidas" width="320" />
+  </Step>
+  <Step title="Revisar">
+    Toque em **Revisar abastecimento**. A caixa "Confira antes de confirmar" mostra como ficam o pallet e a mesa, e como o material entra (por exemplo, "parado em mesa" quando ainda não há etiquetador).
+
+    <img src="/nacionalizacao/img/aplicativo/33-abast-revisao.png" alt="Revisão do abastecimento" width="320" />
+  </Step>
+  <Step title="Confirmar">
+    Toque em **Confirmar abastecimento** (ou **Corrigir** para voltar). O aplicativo abre a mesa e mostra um aviso no topo com o botão **Desfazer**.
+
+    <img src="/nacionalizacao/img/aplicativo/34-abast-registrado.png" alt="Abastecimento registrado, com o botão Desfazer" width="320" />
+  </Step>
+</Steps>
+
+<Note>
+A mesa tem um limite de caixas (padrão de 120; a máquina não tem limite). Se a mesa já tiver outro produto, o aplicativo pede a confirmação "Confirmo misturar produtos nesta mesa". O abastecimento fica bloqueado quando alguma mesa ficou sem fechamento no dia anterior, e é ação exclusiva do perfil Abastecedor. Mesa sem etiquetador recebe o material como "parado em mesa" até o check-in.
+</Note>
+
+## Abastecer a máquina
+
+<Steps>
+  <Step title="Abrir a máquina">
+    No painel, toque no cartão da máquina e depois em **Abastecer esta mesa**.
+
+    <img src="/nacionalizacao/img/aplicativo/40-maquina-vazia.png" alt="Tela da máquina sem material" width="320" />
+  </Step>
+  <Step title="Produto e quantidade">
+    Escolha o produto e digite a **Quantidade de caixas**. A única mesa disponível é a própria máquina.
+
+    <img src="/nacionalizacao/img/aplicativo/41-maquina-abastecer.png" alt="Abastecimento da máquina preenchido" width="320" />
+  </Step>
+  <Step title="Revisar e confirmar">
+    Toque em **Revisar abastecimento** e depois em **Confirmar abastecimento**. A tela da máquina volta com o material e o botão **Desfazer** no topo.
+
+    <img src="/nacionalizacao/img/aplicativo/42-maquina-abastecida.png" alt="Máquina abastecida" width="320" />
+  </Step>
+</Steps>
+
+## Desfazer um abastecimento
+
+<Steps>
+  <Step title="Tocar em Desfazer">
+    Logo depois de confirmar, o aviso preto no topo mostra o abastecimento feito. Toque em **Desfazer** para as caixas voltarem ao pallet.
+  </Step>
+</Steps>
+
+<Note>
+O desfazer só fica disponível logo após o abastecimento, e o sistema recusa se a mesa já teve outra movimentação com aquele material.
+</Note>

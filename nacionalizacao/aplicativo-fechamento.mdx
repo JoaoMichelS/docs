@@ -1,0 +1,68 @@
+---
+title: "Aplicativo de mesa: Fechamento do dia"
+sidebarTitle: "Fechamento do dia"
+---
+
+**Menu:** 1702 - Aplicativo de mesa, Liderança, Fechar  
+**Perfis:** Liderança
+
+No fim do dia a liderança corta os turnos e confere as caixas de cada mesa. O dia tem dois turnos, com cortes automáticos (padrão de 16:50 para o 1º turno e 23:50 para o 2º). A liderança pode antecipar o corte. O fechamento mostra também o tempo em mesa de cada etiquetador no dia.
+
+<img src="/nacionalizacao/img/aplicativo/160-fechamento-inicio.png" alt="Tela de fechamento do dia" width="320" />
+
+## Antecipar o corte do turno
+
+<Steps>
+  <Step title="Pedir o corte">
+    Com o perfil **Liderança**, toque em **Fechar** e depois em **Antecipar o corte do 1º turno** (ou do 2º turno, conforme o turno aberto).
+  </Step>
+  <Step title="Confirmar">
+    Leia o aviso e toque em **Confirmar o corte**. No 1º turno é a virada para o 2º: todos os etiquetadores da filial saem das mesas, com o tempo acumulado, e o material fica onde está, sem contagem.
+
+    <img src="/nacionalizacao/img/aplicativo/161-corte-confirma.png" alt="Confirmação do corte do 1º turno" width="320" />
+
+    <img src="/nacionalizacao/img/aplicativo/162-corte-feito.png" alt="Turno cortado" width="320" />
+  </Step>
+  <Step title="Corte do dia">
+    No 2º turno o corte fecha o dia: os etiquetadores saem das mesas, o check-in fica bloqueado até o próximo dia e a contagem do fechamento é aberta.
+
+    <img src="/nacionalizacao/img/aplicativo/164-corte2-confirma.png" alt="Confirmação do corte do dia" width="320" />
+  </Step>
+</Steps>
+
+<Warning>
+O corte desamarra todos os etiquetadores da filial de uma vez e não pode ser desfeito. Depois do corte do dia, o abastecimento e o check-in só voltam no próximo dia operacional.
+</Warning>
+
+<img src="/nacionalizacao/img/aplicativo/163-fechamento-turno2.png" alt="Turno 2 aberto, depois da virada" width="320" />
+
+## Contar as mesas e enviar o fechamento
+
+<Steps>
+  <Step title="Ver as mesas a fechar">
+    Depois do corte do dia, a tela lista cada mesa com material: o total que o sistema aponta, quanto está a etiquetar e quanto está pronto.
+
+    <img src="/nacionalizacao/img/aplicativo/165-fechamento-contagem.png" alt="Mesas a fechar" width="320" />
+  </Step>
+  <Step title="Informar as já etiquetadas">
+    Em cada mesa, preencha **Já etiquetadas** com as caixas que estão etiquetadas na mesa (zero se não houver). O valor não pode passar do total da mesa.
+
+    <img src="/nacionalizacao/img/aplicativo/166-fechamento-recusa.png" alt="Recusa quando o valor passa do total" width="320" />
+
+    <img src="/nacionalizacao/img/aplicativo/167-fechamento-preenchido.png" alt="Totais corrigidos" width="320" />
+  </Step>
+  <Step title="Enviar">
+    Toque em **Confirmar os totais e enviar o fechamento**. A mensagem mostra as mesas enviadas, as caixas etiquetadas que ficam para o abastecedor retirar e quando o dia seguinte começa.
+
+    <img src="/nacionalizacao/img/aplicativo/168-fechamento-enviado.png" alt="Fechamento enviado" width="320" />
+  </Step>
+  <Step title="Conferir o resumo">
+    A tela passa a mostrar quem enviou, a hora, as mesas fechadas e o tempo em mesa por etiquetador.
+
+    <img src="/nacionalizacao/img/aplicativo/169-fechamento-final.png" alt="Resumo do fechamento" width="320" />
+  </Step>
+</Steps>
+
+<Note>
+No dia seguinte, a liderança faz a contagem de abertura dessas mesas ("Abrir o dia"). Se a liderança não fechar o dia, o painel mostra o aviso "mesa do dia anterior sem fechamento" com o botão **Fechar o dia anterior**, e o abastecimento e o check-in ficam bloqueados.
+</Note>

@@ -1,0 +1,564 @@
+---
+title: "Planejamento de produção"
+---
+
+**Menu:** 1701 - Planejamento de produção  
+**Perfis:** PCE, Qualidade, Supervisão, Gestão, TI
+
+É a tela central da nacionalização. Aqui o PCE lança as **necessidades** (pedidos de etiquetagem de um produto, em caixas), a qualidade checa o pallet que desceu, e todos acompanham o caminho de cada necessidade até o fim. Cada perfil enxerga a mesma lista, mas só vê os botões que pode usar.
+
+![Visão geral da tela](/nacionalizacao/img/planejamento/01-visao-geral.png)
+
+## Entender o caminho de uma necessidade
+
+Uma **necessidade** é o pedido para etiquetar uma quantidade de caixas de um produto. Ela recebe uma chave, como **NEC-EFX-0155** (filial EFX) ou **NEC-ALP-0016** (filial ALP), e a numeração nunca é reaproveitada, nem quando a necessidade é cancelada.
+
+O caminho completo, com quem age em cada passo:
+
+1. **Aguardando separação do pallet.** A necessidade nasce aqui, lançada pelo PCE. O pallet ainda não desceu do estoque. Nesta fase o PCE pode alterar ou cancelar.
+2. **Aguardando qualidade.** O PCE registra a **descida** (quantas caixas desceram e de que lote) e a necessidade vai para a fila da qualidade.
+3. **Checagem da qualidade.** A qualidade confere o pallet e decide:
+   - **Liberar para etiquetagem**: a necessidade passa para **Em produção**. Se liberar menos caixas do que desceram, o restante fica reprovado.
+   - **Reter**: a necessidade fica em **Retido para análise** até a qualidade reverter a retenção.
+   - **Reprovar tudo**: a necessidade fica em **Reprovado pela qualidade**, e a decisão passa ao PCE (**Devolver para nova inspeção** ou **Encerrar sem etiquetar**).
+4. **Em produção.** O material liberado fica disponível para o abastecedor, que leva as caixas para a mesa pelo aplicativo de mesa. As caixas etiquetadas voltam como **Efetuado**. Enquanto está em produção, a qualidade pode retirar **amostra**, registrar **não conformidade** e **avaria no pallet**, e a liderança pode sinalizar **falta de mercadoria** pelo aplicativo (a necessidade passa a **Falta de mercadoria** e volta a Em produção se a falta for desfeita).
+5. **Confirmação de atendimento.** Quando todas as caixas pedidas foram etiquetadas (ou a falta foi sinalizada), a qualidade usa **Confirmar atendimento**.
+6. **Encerramento.** Só depois da confirmação o PCE usa **Encerrar necessidade**, e a necessidade vai para **Etiquetado**, que é o estado final. Se faltou material, a quantidade que faltou fica registrada.
+
+Os outros finais possíveis são **Cancelada** (antes de qualquer movimentação) e **Encerrada sem etiquetar** (depois de uma reprovação total).
+
+A coluna **Status** mostra um aviso pequeno embaixo quando a necessidade espera alguém: "aguarda a qualidade" (atendimento a confirmar), "pronta para encerrar" (aguarda o PCE), "aguarda o PCE" (lote reprovado), "lote misturado" (apontamento travado até o PCE resolver) e "falta de N cx".
+
+<Note>
+Os problemas vistos na mesa também voltam para esta tela: um **lote misturado** sinalizado pela mesa trava o apontamento até o PCE resolver, e uma **avaria retirada da mesa** fica aguardando a inspeção da qualidade (veja **Tratar ocorrências e avarias**). O estorno de uma retirada já feita e a reabertura de fechamento são feitos pela Supervisão ou Gestão em outra tela do módulo, não aqui.
+</Note>
+
+## Ler a lista e abrir os detalhes
+
+<Steps>
+  <Step title="Entender as colunas">
+    A lista **Lançadas recentemente** mostra as últimas 30 necessidades, com as de maior urgência primeiro e, dentro da mesma urgência, as mais novas. As colunas são:
+
+    - **Chave**: identificação da necessidade. Quando existe necessidade espelho, aparece "espelho de" ou "espelho:" com a outra chave.
+    - **Produto**: código e descrição.
+    - **Caixas**: quantidade pedida.
+    - **Pallet**, **Amostra**, **Avaria** e **Efetuado**: onde estão as caixas liberadas pela qualidade. Aparecem com "—" até a primeira liberação.
+    - **Apuração**: diferenças de contagem da mesa (divergência em apuração, baixa por perda ou entrada por ajuste). Aparece "—" quando não há.
+    - **Ocorrências**: resumo de não conformidades (**pendentes** em vermelho, **inspecionadas** em verde) e avarias a inspecionar.
+    - **Razão**: confere se a soma das caixas fecha com o que foi liberado. "fecha em 70" (verde) é o esperado. Em vermelho aparece "X de Y": as caixas não fecham e há diferença para tratar.
+    - **Lote**, **Classificação** (urgência, prioridade e tipo), **Status**, **Lançada em** e **Por**.
+
+    ![Visão geral da tela](/nacionalizacao/img/planejamento/01-visao-geral.png)
+  </Step>
+  <Step title="Abrir os detalhes de uma linha">
+    Clique na **chave** da necessidade (ela fica sublinhada). Abre uma faixa embaixo da linha com lote, validade, quantas caixas desceram, quantas foram liberadas, o tempo de espera na qualidade e a justificativa da checagem, quando houver. Clique de novo para fechar.
+
+    ![Faixa de detalhes aberta](/nacionalizacao/img/planejamento/65-detalhe-linha.png)
+  </Step>
+  <Step title="Ver as ações da linha">
+    No fim da linha, o botão de três pontinhos abre o menu de ações. O menu só mostra o que o seu perfil pode fazer naquele status. Se nada se aplica, o botão não aparece.
+
+    ![Menu de ações da linha](/nacionalizacao/img/planejamento/10-menu-acoes.png)
+  </Step>
+</Steps>
+
+<Note>
+Esta tela não tem filtros de busca, ordenação por coluna, escolha de colunas, paginação nem exportação. Para olhar só um grupo de necessidades (por exemplo, só as que aguardam liberação da qualidade) use a tela **Minha fila**, que abre esta lista já recortada.
+</Note>
+
+## Trocar de perfil e usar um recorte
+
+<Steps>
+  <Step title="Trocar o perfil">
+    Quem tem mais de um perfil vê, no alto da tela, a caixa com o nome do perfil atual (**PCE**, **Qualidade**, **Supervisão**, **Gestão** ou **TI**). Abra a caixa e escolha outro. Os botões da tela mudam conforme o perfil.
+
+    ![Caixa de perfil aberta](/nacionalizacao/img/planejamento/68-trocar-perfil.png)
+  </Step>
+  <Step title="Ver a visão da Qualidade">
+    No perfil **Qualidade**, as linhas ganham ações de checagem, amostra, não conformidade, avaria e confirmação de atendimento.
+
+    ![Tela no perfil Qualidade](/nacionalizacao/img/planejamento/23-visao-qualidade.png)
+  </Step>
+  <Step title="Ver a visão da Gestão">
+    No perfil **Gestão**, aparece o botão **Destinatários de alerta** e quase nenhuma ação nas linhas.
+
+    ![Tela no perfil Gestão](/nacionalizacao/img/planejamento/66-visao-gestao.png)
+  </Step>
+  <Step title="Entender o recorte">
+    Quando você chega pela **Minha fila**, o título muda para "Planejamento de produção · (nome do recorte)", a lista mostra só aquele grupo, e aparece **Limpar recorte** no canto da lista. Clique nele para voltar à lista completa.
+
+    ![Lista com recorte e o link Limpar recorte](/nacionalizacao/img/planejamento/69-recorte.png)
+  </Step>
+</Steps>
+
+## Lançar uma necessidade
+
+*Perfis: PCE*
+
+<Steps>
+  <Step title="Abrir o formulário">
+    Clique em **Nova necessidade**, no canto superior direito.
+
+    ![Botão Nova necessidade destacado](/nacionalizacao/img/planejamento/02-botao-nova.png)
+  </Step>
+  <Step title="Preencher a classificação">
+    Escolha a **Filial** (obrigatória). **Urgência**, **Prioridade** e **Tipo de necessidade** são opcionais. A urgência define a ordem da lista (crítica, alta, normal).
+
+    ![Formulário vazio](/nacionalizacao/img/planejamento/03-formulario-vazio.png)
+  </Step>
+  <Step title="Escolher o produto">
+    No campo **Produto**, digite o código ou parte da descrição (por exemplo, **MILKA ALPINE**) e clique no produto na lista. Se digitar um código exato e apertar Enter, o produto é localizado direto. Produtos inativos aparecem marcados como "inativo", e o lançamento continua permitido. Para trocar de produto, clique em **Trocar**.
+
+    ![Busca de produto](/nacionalizacao/img/planejamento/04-busca-produto.png)
+  </Step>
+  <Step title="Informar quantidade e lote">
+    Preencha **Quantidade (caixas)** (obrigatória, maior que zero) e, se já souber, o **Lote**. Os quadros **Em aberto** mostram quantas necessidades já existem para esse produto em cada filial e quantas caixas ainda faltam, para evitar pedido duplicado.
+
+    ![Formulário preenchido](/nacionalizacao/img/planejamento/05-formulario-preenchido.png)
+  </Step>
+  <Step title="Lançar">
+    Clique em **Lançar e fechar**. Se houver algo para conferir (lote que não existe no ERP, produto inativo ou uma necessidade igual lançada hoje), aparece o aviso **Confira antes de lançar**. Clique em **Lançar mesmo assim** para seguir ou em **Voltar** para corrigir.
+
+    ![Aviso Confira antes de lançar](/nacionalizacao/img/planejamento/06-aviso-lancamento.png)
+  </Step>
+  <Step title="Lançar várias seguidas">
+    Use **Lançar e continuar** para registrar e deixar o formulário aberto. Filial, urgência, prioridade e tipo continuam preenchidos, e só o produto, a quantidade e o lote voltam em branco. Aparece a mensagem com a chave criada.
+
+    ![Mensagem de necessidade lançada, formulário pronto para a próxima](/nacionalizacao/img/planejamento/07-lancada-continuar.png)
+  </Step>
+</Steps>
+
+<Note>
+A necessidade nasce como **Aguardando separação do pallet**. O lote é opcional: se não foi informado agora, é informado na descida do pallet. Um lote que não existe no ERP gera só um aviso, não bloqueia.
+</Note>
+
+## Lançar uma necessidade com espelho entre filiais
+
+*Perfis: PCE*
+
+<Steps>
+  <Step title="Escolher filial e prioridade que geram espelho">
+    No formulário de **Nova necessidade**, escolha a filial **ALP** com prioridade **EFX**, ou a filial **EFX** com prioridade **Alpha**. Aparece o aviso em amarelo dizendo que a necessidade gera também uma necessidade espelho na outra filial, com a prioridade invertida.
+
+    ![Aviso de espelho no formulário](/nacionalizacao/img/planejamento/08-espelho-formulario.png)
+  </Step>
+  <Step title="Lançar">
+    Preencha produto, quantidade e lote e lance normalmente. A mensagem informa as duas chaves criadas.
+
+    ![Mensagem de lançamento com espelho](/nacionalizacao/img/planejamento/09-espelho-lancada.png)
+  </Step>
+</Steps>
+
+<Note>
+As duas necessidades têm a mesma quantidade e lote, mas seguem caminhos independentes depois de lançadas. Na lista, a coluna **Chave** mostra "espelho de" na cópia e "espelho:" na original.
+</Note>
+
+## Alterar uma necessidade
+
+*Perfis: PCE*
+
+<Steps>
+  <Step title="Abrir a alteração">
+    No menu de três pontinhos da linha, clique em **Alterar**. Abre o formulário **Editar etiquetagem** com os dados atuais.
+
+    ![Formulário de edição](/nacionalizacao/img/planejamento/11-editar-formulario.png)
+  </Step>
+  <Step title="Mudar o que precisa e salvar">
+    Altere urgência, prioridade, tipo, quantidade ou lote e clique em **Salvar**. Aparece a confirmação **Alterar a necessidade**, que mostra a quantidade antes e depois. O valor anterior fica registrado na trilha de auditoria.
+
+    ![Confirmação com quantidade antes e depois](/nacionalizacao/img/planejamento/12-alterar-confirmar.png)
+  </Step>
+  <Step title="Confirmar duas vezes">
+    Clique em **Continuar** e, na confirmação final, em **Sim, alterar**. Depois aparece a mensagem "Necessidade editada".
+
+    ![Confirmação final da alteração](/nacionalizacao/img/planejamento/13-alterar-confirmacao-final.png)
+
+    ![Quantidade alterada na lista](/nacionalizacao/img/planejamento/14-alterada.png)
+  </Step>
+</Steps>
+
+<Note>
+A **filial** não pode ser alterada (a chave segue a numeração da filial): cancele e lance outra necessidade. Depois da descida, o **produto** também não pode ser trocado. Se a quantidade mudar com o pallet já liberado, a necessidade volta para **Aguardando qualidade**, a liberação é estornada e a qualidade checa de novo; isso só é permitido se não houver amostra, avaria ou outro registro dependendo do pallet liberado. Não é possível alterar enquanto houver material dessa necessidade em alguma mesa: o abastecedor precisa devolver ao pallet ou retirar o etiquetado antes. Necessidades canceladas, encerradas ou etiquetadas não podem ser alteradas.
+</Note>
+
+## Cancelar uma necessidade
+
+*Perfis: PCE*
+
+<Steps>
+  <Step title="Escolher Cancelar">
+    No menu de três pontinhos da linha, clique em **Cancelar** (em vermelho).
+
+    ![Item Cancelar no menu](/nacionalizacao/img/planejamento/20-menu-cancelar.png)
+  </Step>
+  <Step title="Confirmar">
+    Na pergunta "Cancelar a necessidade ...?", clique em **Sim, cancelar**.
+
+    ![Confirmação de cancelamento](/nacionalizacao/img/planejamento/21-cancelar-confirmar.png)
+  </Step>
+  <Step title="Conferir">
+    Aparece a mensagem "Necessidade ... cancelada" e a linha sai da lista.
+
+    ![Necessidade cancelada](/nacionalizacao/img/planejamento/22-cancelada.png)
+  </Step>
+</Steps>
+
+<Warning>
+O cancelamento só vale para necessidades ainda em **Aguardando separação do pallet**. Depois que houve descida ou qualquer movimentação, não dá mais para cancelar. A chave cancelada não volta a ser usada.
+</Warning>
+
+## Registrar a descida do pallet
+
+*Perfis: PCE*
+
+<Steps>
+  <Step title="Abrir a descida">
+    Na linha de uma necessidade em **Aguardando separação do pallet**, abra o menu de três pontinhos e clique em **Registrar descida**.
+
+    ![Menu com Registrar descida](/nacionalizacao/img/planejamento/10-menu-acoes.png)
+  </Step>
+  <Step title="Informar caixas e lote">
+    Preencha **Quantidade (caixas)** com o que realmente desceu do estoque e o **Lote** do pallet. Os dois campos são obrigatórios.
+
+    ![Janela de descida preenchida](/nacionalizacao/img/planejamento/15-descida-formulario.png)
+  </Step>
+  <Step title="Registrar">
+    Clique em **Registrar descida**. Se a quantidade for maior que a pedida (mas até o dobro), aparece o aviso **Descida acima do solicitado**: as caixas excedentes serão etiquetadas e sinalizadas. Confirme em **Registrar mesmo assim** ou volte em **Voltar**.
+
+    ![Aviso de descida acima do solicitado](/nacionalizacao/img/planejamento/18-descida-acima.png)
+  </Step>
+  <Step title="Conferir">
+    Aparece "Descida registrada!" e a necessidade passa para **Aguardando qualidade**, com o tempo de espera na linha.
+
+    ![Descida registrada](/nacionalizacao/img/planejamento/17-descida-registrada.png)
+  </Step>
+</Steps>
+
+<Note>
+Mais do que o dobro do pedido é recusado (**Descida recusada**): confira a quantidade e tente de novo.
+
+![Descida recusada por passar do dobro](/nacionalizacao/img/planejamento/16-descida-recusada.png)
+
+Depois da descida, a necessidade aparece na fila da qualidade e na **Minha fila** de quem faz a checagem.
+
+![Necessidade aguardando qualidade](/nacionalizacao/img/planejamento/19-status-aguardando-qualidade.png)
+</Note>
+
+## Checar o pallet e liberar para etiquetagem
+
+*Perfis: Qualidade*
+
+<Steps>
+  <Step title="Abrir a checagem">
+    No perfil **Qualidade**, na linha de uma necessidade em **Aguardando qualidade**, abra o menu de três pontinhos e clique em **Checar**.
+
+    ![Item Checar no menu](/nacionalizacao/img/planejamento/24-menu-checar.png)
+  </Step>
+  <Step title="Marcar o checklist">
+    A janela **Checagem de qualidade** mostra produto, lote, validade, quantas caixas foram pedidas e quantas desceram. Marque cada item que está conforme: quantidade de caixas, lote único, validade dentro do aceite, caixas íntegras e selagem íntegra.
+
+    ![Checklist todo conforme](/nacionalizacao/img/planejamento/25-checagem-conforme.png)
+  </Step>
+  <Step title="Justificar item não conforme">
+    Se desmarcar algum item, o campo **Justificativa** passa a ser obrigatório e o botão de liberar fica bloqueado até você escrever.
+
+    ![Justificativa obrigatória](/nacionalizacao/img/planejamento/26-checagem-justificativa.png)
+  </Step>
+  <Step title="Definir a quantidade liberada">
+    Em **Quantidade Liberada(caixas)** informe de 1 até o total que desceu. A **Quantidade Reprovada(caixas)** é calculada sozinha (o que sobrar).
+
+    ![Liberação parcial: 70 liberadas, 10 reprovadas](/nacionalizacao/img/planejamento/33-checagem-parcial.png)
+  </Step>
+  <Step title="Liberar">
+    Clique em **Liberar para etiquetagem** e confirme em **Sim, liberar**. Se parte das caixas ficou reprovada, a confirmação avisa que o PCP é alertado.
+
+    ![Confirmação de liberação parcial](/nacionalizacao/img/planejamento/34-liberar-parcial-confirmar.png)
+  </Step>
+  <Step title="Conferir">
+    Aparece "Checagem concluída" e a necessidade passa para **Em produção**, com o saldo no **Pallet** e a **Razão** fechando.
+
+    ![Checagem concluída](/nacionalizacao/img/planejamento/28-liberada.png)
+  </Step>
+</Steps>
+
+<Note>
+Liberada tem que ser pelo menos 1 caixa e no máximo o que desceu. Para reprovar tudo, use **Reprovar tudo** (veja a ação seguinte). Liberação sem checklist conforme exige justificativa.
+</Note>
+
+## Reter ou reprovar o pallet
+
+*Perfis: Qualidade*
+
+<Steps>
+  <Step title="Reter para análise">
+    Na janela de **Checagem de qualidade**, clique em **Reter** quando precisar de mais tempo para decidir.
+
+    ![Janela de checagem com o botão Reter](/nacionalizacao/img/planejamento/26-checagem-justificativa.png)
+  </Step>
+  <Step title="Confirmar a retenção">
+    Confirme em **Sim, reter**. O pallet fica retido e não segue para produção.
+
+    ![Confirmação de retenção](/nacionalizacao/img/planejamento/29-reter-confirmar.png)
+
+    ![Necessidade retida](/nacionalizacao/img/planejamento/30-retida.png)
+  </Step>
+  <Step title="Reverter a retenção">
+    Na linha da necessidade **Retido para análise**, abra o menu e clique em **Reverter retenção**. A necessidade volta para **Aguardando qualidade** para ser checada.
+
+    ![Item Reverter retenção no menu](/nacionalizacao/img/planejamento/31-menu-reverter-retencao.png)
+
+    ![Retenção removida](/nacionalizacao/img/planejamento/32-retencao-revertida.png)
+  </Step>
+  <Step title="Reprovar tudo">
+    Se o material não serve, clique em **Reprovar tudo** na janela de checagem e confirme em **Sim, reprovar**. Todo o material que desceu fica reprovado, o PCP e a gestão são alertados e a decisão passa ao PCE.
+
+    ![Confirmação de reprovação total](/nacionalizacao/img/planejamento/35-reprovar-confirmar.png)
+  </Step>
+  <Step title="Conferir">
+    A necessidade fica em **Reprovado pela qualidade**, com o aviso "aguarda o PCE".
+
+    ![Necessidade reprovada](/nacionalizacao/img/planejamento/36-reprovada.png)
+  </Step>
+</Steps>
+
+## Decidir sobre um lote reprovado
+
+*Perfis: PCE*
+
+<Steps>
+  <Step title="Abrir o menu da necessidade reprovada">
+    No perfil **PCE**, na linha com status **Reprovado pela qualidade**, abra o menu de três pontinhos. Aparecem duas decisões.
+
+    ![Menu da necessidade reprovada](/nacionalizacao/img/planejamento/56-menu-reprovada.png)
+  </Step>
+  <Step title="Devolver para nova inspeção">
+    Clique em **Devolver para nova inspeção** e confirme em **Sim, devolver**. O reprovado é zerado e a necessidade volta para a fila da qualidade com o pallet original.
+
+    ![Confirmação de devolução](/nacionalizacao/img/planejamento/57-devolver-confirmar.png)
+
+    ![Necessidade devolvida](/nacionalizacao/img/planejamento/58-devolvida.png)
+  </Step>
+  <Step title="Ou encerrar sem etiquetar">
+    Clique em **Encerrar sem etiquetar** (em vermelho) e confirme em **Sim, encerrar**.
+
+    ![Confirmação de encerramento sem etiquetar](/nacionalizacao/img/planejamento/59-encerrar-sem-etiquetar-confirmar.png)
+
+    ![Necessidade encerrada sem etiquetar](/nacionalizacao/img/planejamento/60-encerrada-sem-etiquetar.png)
+  </Step>
+</Steps>
+
+<Warning>
+**Encerrar sem etiquetar** é definitivo: a necessidade não volta para a fila. Se ainda houver chance de aproveitar o lote, prefira devolver para nova inspeção.
+</Warning>
+
+## Retirar e devolver amostra para teste
+
+*Perfis: Qualidade*
+
+<Steps>
+  <Step title="Abrir a amostra">
+    Na linha de uma necessidade **Em produção**, abra o menu de três pontinhos. O menu da qualidade tem **Amostra**, **Não conformidade** e **Avaria no pallet**. Clique em **Amostra**.
+
+    ![Menu de ações da qualidade](/nacionalizacao/img/planejamento/37-menu-qualidade.png)
+  </Step>
+  <Step title="Informar a quantidade">
+    Em **Quantidade da amostra (caixas)** informe quantas caixas saem do pallet para teste (tamanho livre, até o saldo do pallet). O quadro mostra como o pallet e a amostra vão ficar.
+
+    ![Retirar amostra](/nacionalizacao/img/planejamento/38-amostra-retirar.png)
+  </Step>
+  <Step title="Confirmar a retirada">
+    Clique em **Retirar amostra** e confirme em **Sim, retirar**. As caixas saem do pallet e passam para a coluna **Amostra**.
+
+    ![Confirmação da retirada de amostra](/nacionalizacao/img/planejamento/39-amostra-confirmar.png)
+
+    ![Amostra retirada](/nacionalizacao/img/planejamento/40-amostra-retirada.png)
+  </Step>
+  <Step title="Dar destino à amostra">
+    Abrindo **Amostra** de novo, a janela mostra **Amostra em teste**. Clique em **Devolver ao pallet** (as caixas voltam ao saldo do pallet) ou em **Consumida no teste** (as caixas são baixadas de vez).
+
+    ![Amostra em teste](/nacionalizacao/img/planejamento/41-amostra-em-teste.png)
+  </Step>
+  <Step title="Confirmar a devolução">
+    Confirme em **Sim, devolver**.
+
+    ![Confirmação da devolução da amostra](/nacionalizacao/img/planejamento/42-amostra-devolver-confirmar.png)
+  </Step>
+</Steps>
+
+<Note>
+Só dá para movimentar amostra em necessidade **Em produção** e dentro do saldo que está no pallet.
+</Note>
+
+## Registrar uma não conformidade
+
+*Perfis: Qualidade*
+
+<Steps>
+  <Step title="Abrir o registro">
+    Na linha de uma necessidade **Em produção**, abra o menu e clique em **Não conformidade**.
+
+    ![Janela de não conformidade](/nacionalizacao/img/planejamento/43-nc-vazia.png)
+  </Step>
+  <Step title="Classificar">
+    Escolha a **Natureza**: **Produto** (problema nas caixas) ou **Operador** (problema de quem estava na mesa). Escolha a **Criticidade** (**Baixa**, **Média** ou **Alta**) e o **Tipo** (por exemplo, **Etiqueta torta**, **Embalagem violada**, **Barra de lote divergente**, **Produto fora da validade**, **Roubo ou sumiço**).
+  </Step>
+  <Step title="Detalhar">
+    Na natureza **Produto**, informe a **Quantidade afetada (caixas)**. Na natureza **Operador**, escolha **Quem estava na mesa**. **Local** e **Descrição** ajudam a contar o que aconteceu.
+
+    ![Não conformidade preenchida](/nacionalizacao/img/planejamento/44-nc-preenchida.png)
+  </Step>
+  <Step title="Registrar">
+    Clique em **Registrar**. Aparece a mensagem de registro informando se o alerta foi imediato (criticidade alta) ou se entra no resumo diário dos destinatários.
+
+    ![Não conformidade registrada](/nacionalizacao/img/planejamento/45-nc-registrada.png)
+  </Step>
+</Steps>
+
+<Note>
+A não conformidade **não retira caixas do pallet**: ela só registra a ocorrência. Se a quantidade informada for maior que o pallet, aparece um aviso, mas o registro continua permitido. Criticidade **Alta** manda e-mail na hora; as demais entram no resumo diário. As ocorrências aparecem na coluna **Ocorrências** e na **Minha fila**.
+</Note>
+
+## Registrar avaria no pallet
+
+*Perfis: Qualidade*
+
+<Steps>
+  <Step title="Abrir a avaria">
+    Na linha de uma necessidade **Em produção** (ou com **Falta de mercadoria**), abra o menu e clique em **Avaria no pallet**.
+  </Step>
+  <Step title="Preencher">
+    Informe a **Quantidade avariada (caixas)** (até o que há no pallet), o **Motivo** (**Caixa danificada**, **Sem selagem**, **Produto rasgado**, **Lote divergente** ou **Outro**) e, se quiser, a **Observação**. O quadro mostra como o saldo do pallet vai ficar.
+
+    ![Avaria preenchida](/nacionalizacao/img/planejamento/46-avaria-preenchida.png)
+  </Step>
+  <Step title="Confirmar">
+    Clique em **Registrar avaria** e confirme em **Sim, registrar**.
+
+    ![Confirmação da avaria](/nacionalizacao/img/planejamento/47-avaria-confirmar.png)
+  </Step>
+  <Step title="Conferir">
+    As caixas saem do pallet e somam na coluna **Avaria**. O PCP recebe um alerta por e-mail.
+
+    ![Avaria registrada](/nacionalizacao/img/planejamento/48-avaria-registrada.png)
+  </Step>
+</Steps>
+
+<Note>
+A avaria **não sai do estoque**: ela só muda de saldo (do pallet para a coluna **Avaria**) para a Razão continuar fechando.
+</Note>
+
+## Tratar ocorrências e avarias
+
+*Perfis: Qualidade, PCE, Supervisão, Gestão, TI*
+
+<Steps>
+  <Step title="Abrir as ocorrências">
+    Na coluna **Ocorrências**, clique no resumo (por exemplo, **4 pendentes** ou **1 avaria a inspecionar**). Qualquer perfil pode abrir e consultar; só a qualidade trata.
+
+    ![Resumo na coluna Ocorrências](/nacionalizacao/img/planejamento/49-linha-ocorrencias.png)
+
+    ![Janela de ocorrências](/nacionalizacao/img/planejamento/50-ocorrencias.png)
+  </Step>
+  <Step title="Escolher a tratativa">
+    Em cada ocorrência aberta, escolha a **Tratativa**: **Troca por unidade**, **Retirada da caixa** e **Segregação total** (as três abatem caixas do pallet) ou **Liberado após reinspeção** (não abate nada). Quando a tratativa abate, informe em **Caixas que saem do pallet** quantas caixas saem.
+
+    ![Tratativa escolhida](/nacionalizacao/img/planejamento/51-tratativa-escolhida.png)
+  </Step>
+  <Step title="Aplicar">
+    Clique em **Aplicar tratativa** e confirme em **Sim, aplicar**. A confirmação mostra como o pallet e a avaria vão ficar, e o abatimento acontece uma única vez. A ocorrência passa para **Em tratativa**.
+
+    ![Confirmação da tratativa](/nacionalizacao/img/planejamento/52-tratativa-confirmar.png)
+
+    ![Tratativa aplicada](/nacionalizacao/img/planejamento/53-tratativa-aplicada.png)
+  </Step>
+  <Step title="Concluir a inspeção">
+    Clique em **Concluir inspeção** e confirme em **Sim, concluir**. A ocorrência passa para **Inspecionada** e o PCE é informado. Concluir não retira material do estoque.
+
+    ![Confirmação para concluir a inspeção](/nacionalizacao/img/planejamento/54-concluir-inspecao-confirmar.png)
+
+    ![Ocorrência inspecionada](/nacionalizacao/img/planejamento/55-inspecao-concluida.png)
+  </Step>
+</Steps>
+
+<Note>
+Em **Avarias retiradas da mesa** aparecem as avarias que o abastecedor tirou da mesa pelo aplicativo. Cada uma fica **Aguardando inspeção** até a qualidade clicar em **Concluir inspeção**, e o PCE que lançou a necessidade é informado.
+</Note>
+
+## Resolver um lote misturado
+
+*Perfis: PCE, Supervisão, Gestão, TI*
+
+<Steps>
+  <Step title="Reconhecer o aviso">
+    Quando alguém sinaliza lote misturado na mesa pelo aplicativo, a linha da necessidade mostra "lote misturado" em vermelho na coluna **Status**, e o apontamento nessa mesa fica travado. Passando o mouse, o aviso informa em qual mesa.
+
+    ![Linha com lote misturado sinalizado](/nacionalizacao/img/planejamento/63-lote-misturado-linha.png)
+  </Step>
+  <Step title="Resolver e liberar a mesa">
+    No menu de três pontinhos da linha, clique em **Resolver e liberar** (seguido do nome da mesa) e confirme em **Sim, resolver e liberar**. A sinalização sai da fila de pendências e a retirada do etiquetado naquela mesa volta a funcionar.
+
+    ![Confirmação para resolver o lote misturado](/nacionalizacao/img/planejamento/64-lote-misturado-confirmar.png)
+  </Step>
+</Steps>
+
+<Note>
+Antes de resolver, confira com a liderança se o pallet foi separado corretamente: depois de liberada, a mesa volta a registrar retiradas normalmente. Cada mesa sinalizada tem o seu botão.
+</Note>
+
+## Confirmar o atendimento e encerrar a necessidade
+
+*Perfis: Qualidade, PCE*
+
+<Steps>
+  <Step title="Reconhecer a necessidade pronta">
+    Uma necessidade **Em produção** que já teve todas as caixas etiquetadas (ou com falta sinalizada) mostra "aguarda a qualidade" embaixo do status e fica no contador **Confirmar atendimento** da **Minha fila** da qualidade.
+  </Step>
+  <Step title="A qualidade confirma o atendimento">
+    No perfil **Qualidade**, abra o menu da linha e clique em **Confirmar atendimento**.
+
+    ![Item Confirmar atendimento no menu](/nacionalizacao/img/planejamento/61-menu-confirmar-atendimento.png)
+  </Step>
+  <Step title="Confirmar">
+    Na pergunta "Confirmar o atendimento da ...?", clique em **Sim, confirmar**. É o primeiro passo do encerramento. Depois disso a linha mostra "pronta para encerrar".
+
+    ![Confirmação do atendimento](/nacionalizacao/img/planejamento/62-confirmar-atendimento-swal.png)
+  </Step>
+  <Step title="O PCE encerra">
+    No perfil **PCE**, abra o menu da linha e clique em **Encerrar necessidade**. Enquanto a qualidade não confirmou, o item aparece apagado, e clicar mostra a mensagem **Encerramento recusado**.
+
+    ![Menu com Encerrar necessidade](/nacionalizacao/img/planejamento/81-menu-encerrar.png)
+
+    ![Encerramento recusado por falta de confirmação](/nacionalizacao/img/planejamento/82-encerrar-recusado.png)
+  </Step>
+  <Step title="Confirmar o encerramento">
+    Com o atendimento confirmado, a pergunta mostra quantas caixas foram etiquetadas de quantas pedidas e se houve falta. Clique em **Sim, encerrar**. A necessidade vai para **Etiquetado**, o estado final, e a falta (se houver) fica registrada e congelada.
+  </Step>
+</Steps>
+
+<Warning>
+O encerramento é definitivo: depois de **Etiquetado**, a necessidade não pode mais ser alterada.
+</Warning>
+
+## Configurar os destinatários de alerta
+
+*Perfis: Gestão, TI*
+
+<Steps>
+  <Step title="Abrir a configuração">
+    No perfil **Gestão** ou **TI**, clique em **Destinatários de alerta**, no alto da tela.
+
+    ![Botão Destinatários de alerta no alto da tela](/nacionalizacao/img/planejamento/66-visao-gestao.png)
+  </Step>
+  <Step title="Preencher os e-mails">
+    A janela **Destinatários de alerta por tipo** tem um campo para cada tipo de não conformidade (**Barra de lote divergente**, **Etiqueta torta**, **Etiqueta faltando**, **Embalagem violada**, **Produto fora da validade**, **Roubo ou sumiço**, **Outro**) e para os alertas do PCP (avaria, liberação parcial e reprovação) e da gestão (reprovação total). Separe vários e-mails por ponto e vírgula.
+
+    ![Janela de destinatários](/nacionalizacao/img/planejamento/67-destinatarios.png)
+  </Step>
+  <Step title="Salvar">
+    Clique em **Salvar**. Aparece "Destinatários de alerta salvos".
+  </Step>
+</Steps>
+
+<Note>
+Sem e-mail cadastrado, o alerta daquele tipo não é enviado a ninguém.
+</Note>

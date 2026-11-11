@@ -1,0 +1,118 @@
+---
+title: "Gestão de mesas"
+---
+
+**Menu:** 1703 - Gestão de mesas  
+**Perfis:** PCE, Gestão, TI
+
+Tela de escritório onde o PCE e a gestão cadastram as mesas e as máquinas de etiquetagem de cada filial. Só o que estiver cadastrado aqui aparece no aplicativo de mesa usado no chão de fábrica.
+
+![Lista de mesas e máquinas da filial](/nacionalizacao/img/aplicativo/06-mesas-lista.png)
+
+A tabela mostra, para cada mesa: **Filial**, **Nome**, **Tipo** (Mesa ou Máquina), **Estado** (Ativa ou Inativa, com o motivo), **Etiquetador(es)** que estão nela agora, **A etiquetar** (caixas aguardando etiqueta) e **Prontas** (caixas já etiquetadas esperando retirada).
+
+## Ver só as mesas de uma filial
+
+<Steps>
+  <Step title="Escolher a filial">
+    No alto da tela, abra o campo **Todas as filiais** e escolha a filial (por exemplo, **ALP · Alpha Candies**). A lista mostra só as mesas dela.
+
+    ![Tela sem mesas cadastradas, com o botão Nova mesa destacado](/nacionalizacao/img/aplicativo/01-mesas-vazio.png)
+  </Step>
+</Steps>
+
+<Note>
+Se o seu usuário tiver mais de um perfil de acesso, aparece também um campo de perfil ao lado do filtro de filial. Para cadastrar mesas é preciso estar com o perfil PCE, Gestão ou TI.
+</Note>
+
+## Cadastrar uma mesa ou máquina
+
+<Steps>
+  <Step title="Abrir o formulário">
+    Clique em **Nova mesa**.
+
+    ![Formulário Nova mesa vazio](/nacionalizacao/img/aplicativo/02-mesas-form-vazio.png)
+  </Step>
+  <Step title="Preencher os dados">
+    Escolha a **Filial**, digite o **Nome** (até 60 caracteres) e escolha o **Tipo**: **Mesa** ou **Máquina**.
+
+    ![Formulário preenchido para uma mesa](/nacionalizacao/img/aplicativo/03-mesas-form-preenchido.png)
+
+    Para uma máquina, escolha o tipo **Máquina**.
+
+    ![Formulário preenchido para uma máquina](/nacionalizacao/img/aplicativo/05-mesas-form-maquina.png)
+  </Step>
+  <Step title="Cadastrar">
+    Clique em **Cadastrar**. Uma mensagem confirma e a mesa entra na lista como **Ativa**.
+
+    ![Mesa cadastrada na lista](/nacionalizacao/img/aplicativo/04-mesas-cadastrada.png)
+  </Step>
+</Steps>
+
+<Note>
+O nome é único dentro da filial (maiúsculas e minúsculas contam como o mesmo nome). Se já existir, o formulário avisa e nada é gravado. A máquina funciona diferente da mesa no aplicativo: pode ter vários operadores ao mesmo tempo, não tem limite de caixas e a produção é rateada pelo tempo da equipe.
+</Note>
+
+## Editar o nome ou o tipo de uma mesa
+
+<Steps>
+  <Step title="Abrir a edição">
+    Na linha da mesa, clique em **Editar**.
+
+    ![Botão Editar destacado na linha da mesa](/nacionalizacao/img/aplicativo/07-mesas-botao-editar.png)
+  </Step>
+  <Step title="Alterar e salvar">
+    Mude o **Nome** ou o **Tipo** e clique em **Salvar**. A filial não pode ser trocada.
+
+    ![Formulário Editar mesa](/nacionalizacao/img/aplicativo/08-mesas-editar.png)
+
+    ![Mesa com o nome atualizado](/nacionalizacao/img/aplicativo/09-mesas-editada.png)
+  </Step>
+</Steps>
+
+<Note>
+O tipo (mesa ou máquina) só pode ser trocado quando a mesa está vazia: sem etiquetador e sem caixas. Caso contrário o sistema recusa e explica o motivo.
+</Note>
+
+## Inativar e reativar uma mesa
+
+<Steps>
+  <Step title="Inativar">
+    Na linha da mesa, clique em **Inativar**. Escolha o **Motivo da inativação** (**Manutenção**, **Quebra**, **Reforma** ou **Sem uso no turno**) e clique em **Inativar**.
+
+    ![Janela Inativar com o motivo escolhido](/nacionalizacao/img/aplicativo/10-mesas-inativar.png)
+  </Step>
+  <Step title="Conferir">
+    A mesa passa para **Inativa**, com o motivo, quem inativou e quando. Ela deixa de aparecer para abastecimento e check-in no aplicativo.
+
+    ![Mesa inativa, com o botão Reativar destacado](/nacionalizacao/img/aplicativo/11-mesas-inativada.png)
+  </Step>
+  <Step title="Reativar">
+    Para devolver a mesa à operação, clique em **Reativar**.
+
+    ![Mesa reativada](/nacionalizacao/img/aplicativo/12-mesas-reativada.png)
+  </Step>
+</Steps>
+
+<Note>
+Só dá para inativar mesa sem etiquetador e sem caixas (nem a etiquetar, nem prontas). Se houver, o sistema avisa o que falta fazer: fazer o check-out, retirar o etiquetado ou devolver o material ao pallet. A liderança também pode inativar e reativar pelo aplicativo de mesa.
+</Note>
+
+## Excluir uma mesa
+
+<Steps>
+  <Step title="Pedir a exclusão">
+    Na linha da mesa, clique em **Excluir**. O botão só aparece para mesas que nunca tiveram movimento.
+
+    ![Confirmação de exclusão](/nacionalizacao/img/aplicativo/13-mesas-excluir-confirma.png)
+  </Step>
+  <Step title="Confirmar">
+    Clique em **Sim, excluir**. A mesa some da lista.
+
+    ![Lista depois da exclusão](/nacionalizacao/img/aplicativo/14-mesas-excluida.png)
+  </Step>
+</Steps>
+
+<Warning>
+A exclusão não pode ser desfeita. Mesa que já teve abastecimento, etiquetador ou qualquer outro movimento não pode ser excluída: inative-a.
+</Warning>

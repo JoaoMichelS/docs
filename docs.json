@@ -97,6 +97,168 @@
             ]
           },
           {
+            "group": "1100 - Precificação",
+            "pages": [
+              "precificacao/visao-geral",
+              {
+                "group": "Calculadora",
+                "pages": [
+                  "precificacao/calculadora",
+                  "precificacao/comparativo-uf",
+                  "precificacao/cenarios-sensibilidade",
+                  "precificacao/preco-por-estado",
+                  "precificacao/aba-industria",
+                  "precificacao/resumo-operacao",
+                  "precificacao/comparativo-winthor"
+                ]
+              },
+              "precificacao/comparativo-massa",
+              "precificacao/lotes-preco",
+              {
+                "group": "Cadastros",
+                "pages": [
+                  "precificacao/ncm",
+                  "precificacao/industrias-produtos",
+                  "precificacao/despesas",
+                  "precificacao/etiquetas",
+                  "precificacao/produtos-etiqueta",
+                  "precificacao/politicas-comerciais"
+                ]
+              },
+              "precificacao/dashboard"
+            ]
+          },
+          {
+            "group": "1200 - Produção",
+            "pages": [
+              "producao/visao-geral",
+              "producao/registro-producao",
+              "producao/registro-maquina",
+              "producao/colaboradores",
+              "producao/produtos",
+              "producao/relatorios-visao-geral",
+              "producao/relatorios-por-dia",
+              "producao/relatorios-por-colaborador",
+              "producao/relatorios-por-maquina",
+              "producao/metas"
+            ]
+          },
+          {
+            "group": "1400 - Desbloqueios",
+            "pages": [
+              "desbloqueios/visao-geral",
+              "desbloqueios/clientes-imunes",
+              "desbloqueios/bloqueados",
+              "desbloqueios/execucoes",
+              "desbloqueios/historico",
+              "desbloqueios/configuracao"
+            ]
+          },
+          {
+            "group": "1700 - Nacionalização",
+            "pages": [
+              "nacionalizacao/visao-geral",
+              "nacionalizacao/planejamento",
+              {
+                "group": "Aplicativo de mesa",
+                "pages": [
+                  "nacionalizacao/aplicativo-mesa",
+                  "nacionalizacao/aplicativo-abertura",
+                  "nacionalizacao/aplicativo-abastecimento",
+                  "nacionalizacao/aplicativo-etiquetador",
+                  "nacionalizacao/aplicativo-retirada",
+                  "nacionalizacao/aplicativo-falta",
+                  "nacionalizacao/aplicativo-inativacao",
+                  "nacionalizacao/aplicativo-saidas",
+                  "nacionalizacao/aplicativo-fechamento",
+                  "nacionalizacao/aplicativo-producao-maquina"
+                ]
+              },
+              "nacionalizacao/gestao-mesas",
+              "nacionalizacao/correcoes",
+              "nacionalizacao/divergencias",
+              "nacionalizacao/minha-fila",
+              "nacionalizacao/indicadores",
+              "nacionalizacao/parametros"
+            ]
+          },
+          {
+            "group": "1900 - Gestão de Frota",
+            "pages": [
+              "gestao-frota/visao-geral",
+              {
+                "group": "Motorista",
+                "pages": [
+                  "gestao-frota/motorista/meu-dia",
+                  "gestao-frota/motorista/leitura-qr",
+                  "gestao-frota/motorista/checklist",
+                  "gestao-frota/motorista/resultado-envio",
+                  "gestao-frota/motorista/veiculo-bloqueado",
+                  "gestao-frota/motorista/abastecimento",
+                  "gestao-frota/motorista/jornada",
+                  "gestao-frota/motorista/notificacoes",
+                  "gestao-frota/motorista/minha-area"
+                ]
+              },
+              {
+                "group": "Líder",
+                "pages": [
+                  "gestao-frota/lider/escala-diaria",
+                  "gestao-frota/lider/notificacoes",
+                  "gestao-frota/lider/presenca",
+                  "gestao-frota/lider/perfil-colaborador",
+                  "gestao-frota/lider/ranking",
+                  "gestao-frota/lider/checklists",
+                  "gestao-frota/lider/veiculos",
+                  "gestao-frota/lider/veiculo-detalhe",
+                  "gestao-frota/lider/painel",
+                  "gestao-frota/lider/ocorrencias",
+                  "gestao-frota/lider/busca-global"
+                ]
+              },
+              {
+                "group": "Manutenção",
+                "pages": [
+                  "gestao-frota/manutencao/notificacoes",
+                  "gestao-frota/manutencao/checklists",
+                  "gestao-frota/manutencao/veiculos",
+                  "gestao-frota/manutencao/veiculo-detalhe",
+                  "gestao-frota/manutencao/painel",
+                  "gestao-frota/manutencao/ocorrencias",
+                  "gestao-frota/manutencao/ordens-de-servico",
+                  "gestao-frota/manutencao/estoque-de-pecas",
+                  "gestao-frota/manutencao/preventiva",
+                  "gestao-frota/manutencao/busca-global"
+                ]
+              },
+              {
+                "group": "Gestor",
+                "pages": [
+                  "gestao-frota/gestor/escala-diaria",
+                  "gestao-frota/gestor/cadastros",
+                  "gestao-frota/gestor/configuracoes",
+                  "gestao-frota/gestor/notificacoes",
+                  "gestao-frota/gestor/presenca",
+                  "gestao-frota/gestor/perfil-colaborador",
+                  "gestao-frota/gestor/ranking",
+                  "gestao-frota/gestor/multas",
+                  "gestao-frota/gestor/documentos",
+                  "gestao-frota/gestor/checklists",
+                  "gestao-frota/gestor/veiculos",
+                  "gestao-frota/gestor/veiculo-detalhe",
+                  "gestao-frota/gestor/painel",
+                  "gestao-frota/gestor/relatorios",
+                  "gestao-frota/gestor/ocorrencias",
+                  "gestao-frota/gestor/ordens-de-servico",
+                  "gestao-frota/gestor/estoque-de-pecas",
+                  "gestao-frota/gestor/preventiva",
+                  "gestao-frota/gestor/custos",
+                  "gestao-frota/gestor/busca-global"
+                ]
+              }
+            ]
+          },
+          {
             "group": "Funcionalidades Gerais",
             "pages": [
               "funcionalidades-gerais/personalizacao-colunas",

@@ -1,0 +1,61 @@
+---
+title: "Abastecimento"
+---
+
+**Menu:** 1904 - Meu dia (motorista)
+
+Serve para lançar um abastecimento com KM, litros, valor e foto do cupom, e ver o consumo (km/l) calculado.
+
+<img src="/gestao-frota/img/motorista/35-abastecimento-vazio.png" alt="Tela de abastecimento" width="320" />
+
+## Lançar um abastecimento
+
+<Steps>
+  <Step title="Abrir o Abastecimento">
+    Toque em **Abastecimento** no Meu dia ou em **Abastecer** na barra de baixo.
+  </Step>
+  <Step title="Escolher o veículo">
+    No campo **Veículo**, escolha a placa. A tela mostra o último KM válido e o tanque do veículo.
+  </Step>
+  <Step title="Preencher os dados">
+    Confira a **Data** (hoje), informe **KM do odômetro**, **Litros** e **Valor total (R$)**; o preço por litro aparece na hora. Ajuste o **Combustível**, mantenha ou desmarque **Tanque cheio (necessário para calcular o km/l)** e preencha o **Posto**.
+
+    <img src="/gestao-frota/img/motorista/36-abastecimento-preenchido.png" alt="Formulário preenchido" width="320" />
+  </Step>
+  <Step title="Anexar o cupom">
+    Em **Cupom fiscal**, toque em **Tirar ou anexar foto do cupom (opcional)**. Para trocar a foto, use **Remover**.
+
+    <img src="/gestao-frota/img/motorista/37-abastecimento-cupom-anexado.png" alt="Cupom anexado" width="320" />
+  </Step>
+  <Step title="Enviar">
+    Toque em **Enviar abastecimento**. Aparece "Abastecimento recebido pelo Alpex", com consumo, média do veículo e custo por litro.
+
+    <img src="/gestao-frota/img/motorista/38-abastecimento-recebido.png" alt="Abastecimento recebido" width="320" />
+
+    <img src="/gestao-frota/img/motorista/39-abastecimento-recebido-detalhes.png" alt="Detalhes do consumo" width="320" />
+  </Step>
+  <Step title="Novo lançamento">
+    Toque em **Novo lançamento** para lançar outro ou em **Voltar ao Meu dia**.
+  </Step>
+</Steps>
+
+<Note>
+O km/l só é calculado entre dois abastecimentos com tanque cheio; no primeiro aparece "Calculado no próximo abastecimento com tanque cheio". Escolhas de combustível: Gasolina, Etanol, Diesel S10 e Diesel S500.
+</Note>
+
+## Corrigir os erros do abastecimento
+
+<Steps>
+  <Step title="Ler os erros">
+    Se algo estiver errado, aparece "Corrija antes de enviar:" com a lista (KM, litros e valor maiores que zero, data informada e não futura).
+
+    <img src="/gestao-frota/img/motorista/40-abastecimento-erros.png" alt="Erros do abastecimento" width="320" />
+  </Step>
+  <Step title="Corrigir e enviar de novo">
+    Ajuste os campos e toque em **Enviar abastecimento**.
+  </Step>
+</Steps>
+
+<Note>
+O KM não pode ser menor que a última leitura do veículo (tolerância de 50 km). Nada é gravado enquanto houver erro.
+</Note>

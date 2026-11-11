@@ -1,0 +1,71 @@
+---
+title: "Visão Geral - Precificação"
+description: "Visão geral do módulo de Precificação, das telas e de como o acesso é liberado"
+icon: "dollar-sign"
+---
+
+# Precificação
+
+O módulo **1100 - Precificação** forma o preço de venda dos produtos a partir do custo, dos impostos da rota, das despesas e da margem desejada. Ele cobre a simulação de um produto ou de uma lista na **Calculadora**, a revisão da tabela inteira no **Comparativo em massa** e a aprovação dos preços novos nos **Lotes de preço**.
+
+Cada página deste manual traz o passo a passo, com prints, de todas as ações de uma tela.
+
+<CardGroup cols={2}>
+  <Card title="Calculadora" icon="calculator" href="/precificacao/calculadora">
+    Simular o preço de um ou vários produtos, comparar por UF, por cenário comercial e por estado.
+  </Card>
+  <Card title="Comparativo em massa" icon="table-cells" href="/precificacao/comparativo-massa">
+    Comparar o preço sugerido com o praticado para muitos produtos de uma vez e montar o reajuste.
+  </Card>
+  <Card title="Lotes de preço" icon="stamp" href="/precificacao/lotes-preco">
+    Aprovar ou reprovar os preços enviados e acompanhar a gravação na data de vigência.
+  </Card>
+  <Card title="Cadastros" icon="folder-open" href="/precificacao/ncm">
+    NCM, indústrias e produtos, despesas, etiquetas e políticas comerciais que alimentam os cálculos.
+  </Card>
+</CardGroup>
+
+## Como o trabalho flui
+
+<Steps>
+  <Step title="Manter os cadastros">
+    Os impostos por NCM, as despesas mensais, as etiquetas e as políticas comerciais ficam no submenu **Cadastros**. São eles que a Calculadora e o Comparativo em massa usam nas contas.
+  </Step>
+  <Step title="Simular na Calculadora">
+    Em **1101 - Calculadora V2** se simula o preço de um produto ou de uma lista, com o custo vindo do WinThor ou digitado. As abas de análise mostram o mesmo cálculo por UF, por cenário comercial e por estado. Simular não grava nada.
+  </Step>
+  <Step title="Revisar a tabela em massa">
+    Em **1107 - Comparativo em massa** se compara o preço sugerido com o preço praticado de muitos produtos e se escolhe o que reajustar.
+  </Step>
+  <Step title="Enviar para aprovação">
+    Os preços escolhidos no Comparativo em massa viram um lote, com data de vigência.
+  </Step>
+  <Step title="Aprovar e aguardar a vigência">
+    Em **1111 - Lotes de preço** o lote é aprovado ou reprovado. Aprovado, ele gera o preço futuro, e a gravação na tabela do WinThor acontece na data de vigência, nunca antes.
+  </Step>
+</Steps>
+
+## Telas e permissões
+
+O grupo **1100 - Precificação** aparece no menu para quem tem a permissão **500011**. Além dela, cada tela pede a sua:
+
+| Tela | Para que serve | Permissão |
+|---|---|---|
+| 1101 - Calculadora V2 | Simulação de preço e abas de análise | 501101 |
+| 1102 - Cadastro NCM | Impostos por NCM | 501102 |
+| 1105 - Indústrias e Produtos | Indústrias, produtos e marcas com preço de indústria | 500011 |
+| 1106 - Cadastro Despesas | Despesas mensais usadas como percentual no cálculo | 501108 |
+| 1108 - Etiquetas | Etiquetas e seus custos | 501112 |
+| 1109 - Produtos com etiqueta | Vínculo entre produto e etiquetas | 501113 |
+| 1110 - Políticas Comerciais | Tetos por marca e limiares dos filtros | 501107 |
+| 1104 - Dashboard | Indicadores do módulo | 500011 |
+| 1107 - Comparativo em massa | Sugerido x praticado em lote | 501104 |
+| 1111 - Lotes de preço | Aprovação e acompanhamento dos lotes | 501114 |
+
+<Note>
+Aprovar, reprovar e reverter um lote de preço exige ainda o controle **501104-1**. Alterar um cenário comercial bloqueado exige o controle **501101-1**.
+</Note>
+
+<Tip>
+Após mudar a permissão de alguém, a pessoa precisa sair e entrar de novo no sistema para o acesso valer.
+</Tip>

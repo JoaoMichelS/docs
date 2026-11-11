@@ -1,0 +1,84 @@
+---
+title: "Visão Geral - Nacionalização"
+description: "Visão geral do módulo de Nacionalização, dos perfis e de quem vê cada tela"
+icon: "tag"
+---
+
+# Nacionalização
+
+O módulo **1700 - Nacionalização** controla a etiquetagem dos produtos importados. O PCE lança as **necessidades** (quanto de cada produto precisa ser etiquetado), a qualidade checa o pallet que desceu, o abastecedor leva o material para as mesas e máquinas e retira o que ficou pronto, e a liderança conduz o dia: abre, faz o check-in dos etiquetadores e fecha. Gestão e supervisão acompanham os indicadores, ajustam os parâmetros e fazem as correções.
+
+Cada página deste manual traz o passo a passo, com prints, de todas as ações de uma tela, e indica quais perfis podem executá-las.
+
+<CardGroup cols={2}>
+  <Card title="Planejamento de produção" icon="clipboard-list" href="/nacionalizacao/planejamento">
+    Lançar necessidades e acompanhar o caminho de cada uma, da descida do pallet ao encerramento.
+  </Card>
+  <Card title="Aplicativo de mesa" icon="mobile-screen" href="/nacionalizacao/aplicativo-mesa">
+    A operação no celular: abrir o dia, abastecer, etiquetar, retirar e fechar.
+  </Card>
+  <Card title="Minha fila" icon="inbox" href="/nacionalizacao/minha-fila">
+    O que está esperando por você, de acordo com o seu perfil.
+  </Card>
+  <Card title="Gestão" icon="chart-line" href="/nacionalizacao/indicadores">
+    Indicadores, parâmetros e metas, divergências da abertura e correções.
+  </Card>
+</CardGroup>
+
+## Como o trabalho flui
+
+<Steps>
+  <Step title="Lançar a necessidade">
+    O PCE lança em **1701 - Planejamento de produção** o produto, a quantidade de caixas e o lote.
+  </Step>
+  <Step title="Descer e checar o pallet">
+    O pallet desce do estoque e a qualidade faz a checagem: libera, libera em parte ou reprova.
+  </Step>
+  <Step title="Abrir o dia">
+    No **1702 - Aplicativo de mesa**, a liderança abre o dia conferindo o que ficou nas mesas e faz o check-in dos etiquetadores pelo crachá.
+  </Step>
+  <Step title="Abastecer, etiquetar e retirar">
+    O abastecedor leva o material liberado para as mesas e máquinas e retira o que foi etiquetado. Cada retirada vira produção do etiquetador.
+  </Step>
+  <Step title="Fechar o dia">
+    A liderança faz o corte de cada turno e envia o fechamento com a contagem do que ficou nas mesas.
+  </Step>
+  <Step title="Acompanhar e corrigir">
+    Os números aparecem em **1707 - Indicadores**. Diferenças na abertura do dia seguinte vão para **1705 - Divergências da abertura**, e estornos e reaberturas são feitos em **1704 - Correções e auditoria**.
+  </Step>
+</Steps>
+
+## Perfis e permissões
+
+O acesso é dado pela rotina **501117** no cadastro de permissões. Cada perfil é um controle dessa rotina:
+
+| Perfil | Controle | Permissão |
+|---|---|---|
+| PCE | 1 | 501117-1 |
+| Qualidade | 2 | 501117-2 |
+| Liderança | 3 | 501117-3 |
+| Abastecedor | 4 | 501117-4 |
+| Supervisão | 5 | 501117-5 |
+| Gestão | 6 | 501117-6 |
+| TI | 7 | 501117-7 |
+
+<Note>
+Um usuário pode ter mais de um perfil. Nas telas que mudam conforme o perfil (Planejamento, Minha fila e Aplicativo de mesa), um seletor no topo troca o perfil em uso. O menu mostra apenas as telas liberadas para os perfis do usuário.
+</Note>
+
+<Tip>
+Após mudar a permissão de alguém, a pessoa precisa sair e entrar de novo no sistema para o novo perfil valer.
+</Tip>
+
+## Telas por perfil
+
+| Tela | PCE | Qualidade | Liderança | Abastecedor | Supervisão | Gestão | TI |
+|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| 1701 - Planejamento de produção | ✓ | ✓ | | | ✓ | ✓ | ✓ |
+| 1702 - Aplicativo de mesa | | | ✓ | ✓ | | | |
+| 1703 - Gestão de mesas | ✓ | | | | | ✓ | ✓ |
+| 1704 - Correções e auditoria | | | | | ✓ | ✓ | ✓ |
+| 1705 - Divergências da abertura | | | | | | ✓ | ✓ |
+| 1706 - Minha fila | ✓ | ✓ | ✓ | | ✓ | ✓ | ✓ |
+| 1707 - Indicadores | | | ✓ | | ✓ | ✓ | ✓ |
+| 1708 - Parâmetros e metas | | | ✓ | | | ✓ | ✓ |

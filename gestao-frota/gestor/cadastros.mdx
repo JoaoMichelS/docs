@@ -1,0 +1,327 @@
+---
+title: "Cadastros"
+---
+
+**Menu:** 1902 - Cadastros
+
+Aqui você mantém os cadastros que alimentam toda a Gestão de Frota: veículos, modelos de veículo, modelos de checklist, grupos do checklist e colaboradores. A tela tem cinco abas, uma para cada cadastro. Só o perfil Gestor acessa.
+
+![Visão geral da tela de Cadastros](/gestao-frota/img/gestao/01-cadastros-visao-geral.png)
+
+## Trocar de aba
+
+<Steps>
+  <Step title="Escolher o cadastro">
+    Clique no nome da aba no topo da tela: **Veículos**, **Modelos de veículo**, **Modelos de checklist**, **Grupos do checklist** ou **Colaboradores**.
+
+    ![Abas de cadastro](/gestao-frota/img/gestao/02-cad-aba-modelos.png)
+  </Step>
+</Steps>
+
+<Note>
+A aba escolhida fica na barra de endereço. Se você copiar o link, a outra pessoa abre a tela já na mesma aba.
+</Note>
+
+## Cadastrar um veículo
+
+<Steps>
+  <Step title="Abrir o formulário">
+    Na aba **Veículos**, clique em **Novo veículo**.
+
+    ![Botão Novo veículo](/gestao-frota/img/gestao/03-veiculo-novo-botao.png)
+  </Step>
+  <Step title="Preencher os dados">
+    Preencha **Placa**, **Modelo**, **Marca**, **Ano**, **Capacidade do tanque (L)**, **KM atual do odômetro** e **Faixa de temperatura do baú**. **Renavam (opcional)**, **Chassi (opcional)**, **Base**, **Modelo de checklist** e **Condutor habitual** são opcionais. Se deixar o **Modelo de checklist** em branco, o veículo usa o checklist do modelo escolhido.
+
+    ![Formulário de novo veículo preenchido](/gestao-frota/img/gestao/04-veiculo-novo-formulario.png)
+  </Step>
+  <Step title="Salvar">
+    Clique em **Cadastrar**. O veículo aparece na lista e o QR code (no formato CV-PLACA) é gerado automaticamente.
+  </Step>
+</Steps>
+
+<Note>
+Não é possível cadastrar duas vezes a mesma placa. O **Renavam** tem de 9 a 11 dígitos e o **Chassi** tem 17 caracteres, sem as letras I, O e Q. O **Ano** vai de 1990 até o ano atual. Documentos e planos de preventiva são lançados nas telas próprias, não aqui. Para desistir, clique em **Cancelar**.
+</Note>
+
+## Editar um veículo ou marcá-lo como parado
+
+<Steps>
+  <Step title="Abrir a edição">
+    Na linha do veículo, clique em **Editar**.
+
+    ![Botão Editar na linha do veículo](/gestao-frota/img/gestao/05-veiculo-editar-botao.png)
+  </Step>
+  <Step title="Alterar os campos">
+    Mude o que precisar. A **Placa** não pode ser trocada. Para tirar o veículo de circulação por um tempo, marque **Veículo parado** e descreva o **Motivo da parada**.
+
+    ![Formulário de edição do veículo](/gestao-frota/img/gestao/06-veiculo-editar-formulario.png)
+  </Step>
+  <Step title="Salvar">
+    Clique em **Salvar**.
+  </Step>
+</Steps>
+
+<Note>
+Se não houver nenhuma alteração, o sistema avisa que não há nada para salvar. O bloqueio por item crítico do checklist tem prioridade sobre a marcação de parado. O motivo da parada precisa ter pelo menos 5 caracteres.
+</Note>
+
+## Ver e completar a prontidão do veículo
+
+<Steps>
+  <Step title="Abrir a prontidão">
+    Na linha do veículo, clique em **Prontidão**. A coluna **Pronto para rodar** da lista já mostra o resumo do que falta.
+
+    ![Botão Prontidão](/gestao-frota/img/gestao/07-veiculo-prontidao-botao.png)
+  </Step>
+  <Step title="Conferir e completar">
+    O painel mostra se o veículo está pronto para rodar e lista os documentos obrigatórios (CRLV, Seguro, CVS), a última execução de cada plano de preventiva e o motorista da escala do próximo dia útil. Para o que estiver como **Falta**, informe **Número** e **Validade** do documento, e a data (e o KM, quando o plano tem intervalo em KM) da última execução da preventiva. Escolha o **Motorista** da escala do próximo dia útil, se quiser.
+
+    ![Painel de prontidão do veículo](/gestao-frota/img/gestao/08-veiculo-prontidao-painel.png)
+  </Step>
+  <Step title="Salvar">
+    Clique em **Salvar**. Para sair sem gravar, clique em **Fechar**.
+  </Step>
+</Steps>
+
+<Note>
+Aqui só entram número e validade do documento. O anexo (foto ou PDF) é incluído depois, na tela de Documentos e vencimentos. A lista de documentos exigidos é definida em Configurações, aba **Documentos obrigatórios**.
+</Note>
+
+## Inativar ou reativar um veículo
+
+<Steps>
+  <Step title="Pedir a inativação">
+    Na linha do veículo, clique em **Inativar**.
+
+    ![Botão Inativar na linha do veículo](/gestao-frota/img/gestao/09-veiculo-inativar-botao.png)
+  </Step>
+  <Step title="Informar o motivo">
+    Escreva o **Motivo** (por exemplo: venda, sinistro com perda total, devolução) e clique em **Inativar**.
+
+    ![Janela de inativação com o motivo preenchido](/gestao-frota/img/gestao/10-veiculo-inativar-motivo.png)
+  </Step>
+  <Step title="Reativar quando precisar">
+    Veículos inativos continuam na lista, em cinza, com o motivo. Para trazer o veículo de volta, clique em **Reativar** na linha dele.
+
+    ![Veículo inativo com o botão Reativar](/gestao-frota/img/gestao/130-veiculo-inativo-reativar.png)
+
+    ![Veículo reativado](/gestao-frota/img/gestao/131-veiculo-reativado.png)
+  </Step>
+</Steps>
+
+<Note>
+O veículo inativo sai da escala, do painel, do checklist e dos alertas. Histórico, custos, documentos e multas ficam guardados. O motivo precisa ter pelo menos 5 caracteres, e a inativação é recusada enquanto o veículo tiver ordens de serviço abertas: conclua ou cancele as OS antes.
+</Note>
+
+## Cadastrar um modelo de veículo
+
+<Steps>
+  <Step title="Abrir a aba e o formulário">
+    Abra a aba **Modelos de veículo** e clique em **Novo modelo**.
+
+    ![Lista de modelos de veículo](/gestao-frota/img/gestao/11-modelos-veiculo-lista.png)
+
+    ![Botão Novo modelo](/gestao-frota/img/gestao/12-modelo-veiculo-novo-botao.png)
+  </Step>
+  <Step title="Preencher">
+    Informe **Nome do modelo**, **Marca**, **Tipo**, **CNH mínima**, **Capacidade do tanque (L)** e **Combustível**. Em **Checklist de retorno**, escolha se o modelo segue o padrão da frota, ou se fica Ativo ou Inativo. Em **Checklist do modelo**, escolha o checklist base: o modelo novo recebe uma cópia independente dele.
+
+    ![Formulário de novo modelo preenchido](/gestao-frota/img/gestao/13-modelo-veiculo-novo-formulario.png)
+  </Step>
+  <Step title="Salvar">
+    Clique em **Cadastrar**.
+  </Step>
+</Steps>
+
+<Note>
+O nome do modelo não muda depois de criado, porque identifica veículos e planos. O nome tem até 40 caracteres e não pode repetir. A capacidade do tanque vai de 1 a 400 litros.
+</Note>
+
+## Editar um modelo de veículo
+
+<Steps>
+  <Step title="Abrir a edição">
+    Na linha do modelo, clique em **Editar**.
+
+    ![Botão Editar na linha do modelo](/gestao-frota/img/gestao/14-modelo-veiculo-editar-botao.png)
+  </Step>
+  <Step title="Alterar e salvar">
+    Altere os campos (o **Nome do modelo** fica bloqueado). Em **Modelo de checklist vinculado** você troca o checklist ligado ao modelo. Clique em **Salvar**.
+
+    ![Formulário de edição do modelo](/gestao-frota/img/gestao/15-modelo-veiculo-editar-formulario.png)
+  </Step>
+</Steps>
+
+## Inativar ou reativar um modelo de veículo
+
+<Steps>
+  <Step title="Inativar">
+    Na linha do modelo, clique em **Inativar**. Para trazer o modelo de volta, clique em **Reativar**.
+
+    ![Botão Inativar na linha do modelo](/gestao-frota/img/gestao/16-modelo-veiculo-inativar-botao.png)
+  </Step>
+  <Step title="Confirmar">
+    Na janela de confirmação, clique em **Inativar** (ou em **Voltar** para desistir). O modelo fica com a situação **Inativo**.
+
+    ![Confirmação de inativação do modelo](/gestao-frota/img/gestao/138-modelo-inativar-confirmacao.png)
+
+    ![Modelo inativo com o botão Reativar](/gestao-frota/img/gestao/132-modelo-inativo-reativar.png)
+  </Step>
+  <Step title="Reativar">
+    Para trazer o modelo de volta, clique em **Reativar** na linha dele.
+
+    ![Modelo reativado](/gestao-frota/img/gestao/133-modelo-reativado.png)
+  </Step>
+</Steps>
+
+<Note>
+Não existe exclusão de modelo. Só é possível inativar um modelo que não tenha veículo ativo; se houver, o sistema mostra uma mensagem em vermelho acima da lista explicando o impedimento. A coluna **Veículos ativos** ajuda a conferir.
+</Note>
+
+## Editar os itens de um modelo de checklist
+
+<Steps>
+  <Step title="Escolher o modelo">
+    Abra a aba **Modelos de checklist**. Clique no nome do modelo que quer editar, na fileira de botões no topo.
+
+    ![Lista de itens do modelo de checklist](/gestao-frota/img/gestao/17-modelos-checklist-visao.png)
+
+    ![Escolha do modelo](/gestao-frota/img/gestao/18-modelo-checklist-escolher.png)
+  </Step>
+  <Step title="Alterar os itens">
+    Na tabela, mude diretamente o **Texto** do item, a **Pergunta ao motorista** (se vazia, vale o texto do item), o **Grupo**, a **Criticidade**, a regra de **Foto** e a **Periodicidade**. Desmarque **Ativo** para tirar o item do checklist.
+  </Step>
+  <Step title="Adicionar um item">
+    Clique em **Adicionar item**. Uma linha nova, marcada como **Novo**, aparece no fim da tabela. Preencha o texto e escolha o grupo.
+
+    ![Botão Adicionar item](/gestao-frota/img/gestao/19-modelo-checklist-adicionar-item.png)
+  </Step>
+  <Step title="Salvar ou descartar">
+    Clique em **Salvar nova versão** para gravar. Para abandonar o que mudou, clique em **Descartar alterações**.
+
+    ![Botões Descartar alterações e Salvar nova versão](/gestao-frota/img/gestao/20-modelo-checklist-salvar-botoes.png)
+  </Step>
+</Steps>
+
+<Note>
+Cada gravação cria uma nova versão do modelo (aparece em "Versão N" acima da tabela, com data e autor). A criticidade define o prazo da ocorrência: Crítica 1 h e bloqueio do veículo, Alta 48 h, Baixa 30 dias. Itens semanais aparecem às segundas-feiras e itens de retorno aparecem no checklist de retorno. Item inativo sai do checklist, mas o histórico continua legível. O grupo de cada item precisa estar ativo; itens marcados com **Corrigir grupo** precisam de outro grupo antes de salvar.
+</Note>
+
+## Criar um grupo sem sair do modelo de checklist
+
+<Steps>
+  <Step title="Abrir o formulário">
+    Na aba **Modelos de checklist**, clique em **Novo grupo**.
+  </Step>
+  <Step title="Preencher e salvar">
+    Informe **Nome do grupo**, **Etapa do percurso** e **Ordem no percurso (1 a 99)** e clique em **Cadastrar**. O grupo fica disponível na escolha de grupo de cada item.
+
+    ![Janela Novo grupo do checklist](/gestao-frota/img/gestao/21-modelo-checklist-novo-grupo.png)
+  </Step>
+</Steps>
+
+## Criar, editar, ordenar e inativar grupos do checklist
+
+<Steps>
+  <Step title="Ver os grupos">
+    Abra a aba **Grupos do checklist**. Os quadros no topo mostram **Grupos**, **Ativos**, **Inativos** e **Sem itens**. A lista mostra a ordem, a etapa do percurso, quantos itens e modelos usam cada grupo.
+
+    ![Lista de grupos do checklist](/gestao-frota/img/gestao/22-grupos-lista.png)
+  </Step>
+  <Step title="Filtrar por etapa">
+    No campo **Todas as etapas**, escolha uma etapa do percurso para ver só os grupos dela.
+
+    ![Filtro por etapa](/gestao-frota/img/gestao/23-grupo-filtro-etapa.png)
+  </Step>
+  <Step title="Criar um grupo">
+    Clique em **Novo grupo**, preencha **Nome do grupo**, **Etapa do percurso**, **Ordem no percurso (1 a 99)** e, se quiser, a **Orientação ao motorista (opcional)**. Clique em **Cadastrar**.
+
+    ![Botão Novo grupo](/gestao-frota/img/gestao/24-grupo-novo-botao.png)
+
+    ![Formulário de novo grupo preenchido](/gestao-frota/img/gestao/25-grupo-novo-formulario.png)
+  </Step>
+  <Step title="Mudar a ordem">
+    Na linha do grupo, clique em **Subir** ou **Descer**. A ordem muda na hora. Com um filtro de etapa ativo, a ordenação fica bloqueada: volte para **Todas as etapas** para mover.
+
+    ![Botão Subir na linha do grupo](/gestao-frota/img/gestao/26-grupo-mover.png)
+  </Step>
+  <Step title="Editar">
+    Clique em **Editar**, altere os campos e clique em **Salvar**.
+
+    ![Botão Editar na linha do grupo](/gestao-frota/img/gestao/27-grupo-editar-botao.png)
+
+    ![Formulário de edição do grupo](/gestao-frota/img/gestao/28-grupo-editar-formulario.png)
+  </Step>
+  <Step title="Inativar ou reativar">
+    Clique em **Inativar** na linha do grupo. Para trazê-lo de volta, clique em **Reativar**.
+
+    ![Botão Inativar na linha do grupo](/gestao-frota/img/gestao/29-grupo-inativar-botao.png)
+  </Step>
+</Steps>
+
+<Note>
+No checklist do motorista, os grupos aparecem por etapa do percurso e, dentro da etapa, pela ordem. Renomear um grupo atualiza os itens dos modelos; ocorrências, OS e checklists já enviados mantêm o nome antigo. Não há exclusão. Um grupo usado por itens ativos não pode ser inativado: troque o grupo desses itens ou desative-os antes. Ao mover um grupo para a etapa "Na chegada", o sistema avisa que itens diários ou semanais deixam de aparecer na saída e passam a ser respondidos no retorno; marque a confirmação para continuar.
+</Note>
+
+## Cadastrar um colaborador
+
+<Steps>
+  <Step title="Abrir o formulário">
+    Abra a aba **Colaboradores** e clique em **Novo colaborador**.
+
+    ![Lista de colaboradores](/gestao-frota/img/gestao/30-colaboradores-lista.png)
+
+    ![Botão Novo colaborador](/gestao-frota/img/gestao/31-colaborador-novo-botao.png)
+  </Step>
+  <Step title="Preencher os dados">
+    Informe **Nome completo** e **Função**. Para motorista, **Categoria da CNH** e **Validade da CNH** são obrigatórias. **Telefone (celular ou fixo, com DDD)** e **Líder responsável** são opcionais. Deixe **Ativo** marcado.
+
+    ![Formulário de novo colaborador preenchido](/gestao-frota/img/gestao/32-colaborador-novo-formulario.png)
+  </Step>
+  <Step title="Vincular ao usuário do Alpex (opcional)">
+    No campo de busca em **Usuário do Alpex (login do colaborador)**, digite parte do nome ou da matrícula e clique no resultado certo. Esse vínculo é necessário para o motorista usar as telas do motorista. Para desfazer, clique em **Remover vínculo**.
+
+    ![Busca de usuário do Alpex](/gestao-frota/img/gestao/33-colaborador-vincular-usuario.png)
+  </Step>
+  <Step title="Salvar">
+    Clique em **Cadastrar**.
+  </Step>
+</Steps>
+
+<Note>
+Não pode haver dois colaboradores com o mesmo nome, e um usuário do Alpex só pode estar vinculado a um colaborador. A pessoa não pode ser líder de si mesma, e o líder precisa ser um líder ou gestor.
+</Note>
+
+## Editar, inativar ou reativar um colaborador
+
+<Steps>
+  <Step title="Abrir a edição">
+    Clique na linha do colaborador ou no botão **Editar**.
+
+    ![Botão Editar na linha do colaborador](/gestao-frota/img/gestao/34-colaborador-editar-botao.png)
+  </Step>
+  <Step title="Alterar">
+    Mude os campos que precisar.
+
+    ![Formulário de edição do colaborador](/gestao-frota/img/gestao/35-colaborador-editar-formulario.png)
+  </Step>
+  <Step title="Inativar">
+    Para inativar, desmarque **Ativo** e clique em **Salvar**. O colaborador aparece em cinza na lista, com a situação **Inativo**.
+
+    ![Opção Ativo desmarcada](/gestao-frota/img/gestao/134-colaborador-desmarcar-ativo.png)
+
+    ![Colaborador inativo na lista](/gestao-frota/img/gestao/135-colaborador-inativo-lista.png)
+  </Step>
+  <Step title="Reativar">
+    Clique em **Editar** na linha do colaborador inativo, marque **Ativo** novamente e clique em **Salvar**. Não existe um botão **Reativar** separado nesta aba.
+
+    ![Opção Ativo marcada de novo](/gestao-frota/img/gestao/136-colaborador-reativar-formulario.png)
+
+    ![Colaborador reativado](/gestao-frota/img/gestao/137-colaborador-reativado.png)
+  </Step>
+</Steps>
+
+<Note>
+Um colaborador inativo não aparece como opção de líder nem de condutor, e um motorista inativo não consegue entrar nas telas do motorista (o sistema mostra que o cadastro está inativo). O telefone aparece completo só para Líder e Gestor.
+</Note>
